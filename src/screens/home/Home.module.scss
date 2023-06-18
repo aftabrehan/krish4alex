@@ -2,8 +2,4 @@
 
 .wrapper {
   @extend .flexCol;
-
-  & > section {
-    max-width: 1024px;
-  }
 }

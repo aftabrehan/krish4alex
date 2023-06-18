@@ -2,12 +2,15 @@
 
 .header {
   @extend .spaceBetween;
+  align-self: center;
+  max-width: 1024px;
+  width: 100%;
   padding: 2rem;
 }
 
 .navMenu {
   @extend .spaceBetween;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .hashLink {
