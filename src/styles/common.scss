@@ -8,10 +8,14 @@
   justify-content: flex-start;
 }
 
-.flexColStart {
+.flexCol {
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
+}
+
+.flexColStart {
+  @extend .flexCol;
+  align-items: flex-start;
 }
 
 .flexCenter {
@@ -51,4 +55,10 @@
 
 .noWidth {
   width: 0;
+}
+
+.clearStyles {
+  outline: none;
+  border: none;
+  background: none;
 }

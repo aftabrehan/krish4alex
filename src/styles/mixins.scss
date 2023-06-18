@@ -1,4 +1,4 @@
-@mixin growUnderline($color: $primaryBlue, $width: 80%) {
+@mixin growUnderline($color: $primaryClr, $width: 80%) {
   &::before {
     content: '';
     width: $width;
