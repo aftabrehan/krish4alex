@@ -1,0 +1,117 @@
+@import 'styles/common';
+
+.header {
+  @extend .spaceBetween;
+  padding: 2rem;
+}
+
+.navMenu {
+  @extend .spaceBetween;
+  gap: 2rem;
+}
+
+.hashLink {
+  @extend .flexCenter;
+  gap: 0.15rem;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+  color: $slateGray;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    background-color: $lightGray;
+    transition: width 0.25s 0.15s ease-in-out;
+  }
+
+  &:hover {
+    color: $lightGray;
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  &.active {
+    color: $black;
+
+    &::before {
+      background-color: $primaryClr;
+    }
+
+    span:first-of-type {
+      font-weight: 700;
+      color: $primaryClr;
+    }
+  }
+}
+
+.menuTrigger {
+  @extend .flexCenter, .clearStyles;
+  cursor: pointer;
+  display: none;
+
+  &:hover {
+    svg path {
+      fill: $primaryClr;
+    }
+  }
+
+  svg path {
+    transition: fill 0.25s ease-in-out;
+  }
+}
+
+.mobileNav {
+  @extend .flexCenterCol;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  background-color: $black;
+  transform-origin: top right;
+  animation: blowUp 0.15s ease-in-out forwards;
+  display: none;
+
+  &:not(.showMobileNav) {
+    display: none;
+  }
+
+  .hashLink {
+    &:hover {
+      color: $halfWhite;
+
+      &::before {
+        background-color: $halfWhite;
+      }
+    }
+
+    &.active {
+      color: $white;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navMenu {
+    display: none;
+  }
+
+  .menuTrigger,
+  .mobileNav {
+    display: flex;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    padding: 2rem 1rem;
+  }
+}
