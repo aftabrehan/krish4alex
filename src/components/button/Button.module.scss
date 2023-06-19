@@ -1,11 +1,15 @@
 @import 'styles/common';
 
 .btn {
-  all: unset;
-  padding: 0.25rem 1rem;
-  border-radius: 8px;
-  color: white;
-  background-color: $primaryClr;
+  @extend .flexCenter, .clearStyles;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-family: 'Preahvihear';
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 31px;
+  color: $white;
+  background-color: $black;
   cursor: pointer;
 
   &:hover {

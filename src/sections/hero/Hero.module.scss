@@ -1,0 +1,142 @@
+@import 'styles/common';
+
+.section {
+  @extend .flexCol;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.main {
+  @extend .spaceBetween;
+  padding: 4rem 2rem;
+  gap: 1rem;
+}
+
+.left {
+  @extend .flexColStart;
+  width: 50%;
+  gap: 3rem;
+  height: 100%;
+
+  h3 {
+    @extend .flexCenter;
+    gap: 0.75rem;
+    font-family: 'Preahvihear';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 31px;
+    white-space: nowrap;
+    color: $black;
+  }
+}
+
+.secondaryText {
+  font-family: 'Preahvihear';
+  font-weight: 400;
+  font-size: 14.9843px;
+  line-height: 27px;
+  color: $lightGray;
+}
+
+.right {
+  @extend .flexColEnd;
+  width: 50%;
+}
+
+.statusRow {
+  @extend .flexStart;
+  align-items: center;
+  gap: 0.5rem;
+  width: 90%;
+  padding: 0.75rem 0.5rem;
+  white-space: nowrap;
+  color: $veryLightGray;
+  background-color: $black;
+
+  span {
+    color: $white;
+  }
+}
+
+.yellowBox {
+  width: 1rem;
+  height: 1rem;
+  background-color: $yellow;
+}
+
+.bottomSection {
+  @extend .flexColStart;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  gap: 1rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.upperText {
+  margin-left: 1rem;
+  font-family: 'Preahvihear';
+  font-weight: 400;
+  font-size: 26.8653px;
+  line-height: 49px;
+  color: $black;
+  text-decoration: underline;
+}
+
+.mainText {
+  max-width: 374px;
+  font-family: 'Preahvihear';
+  font-weight: 400;
+  font-size: 48.5251px;
+  line-height: 61px;
+  color: $black;
+
+  span {
+    color: $primaryClr;
+  }
+}
+
+.miniArtBox {
+  position: absolute;
+  top: 0;
+  right: 4rem;
+  width: 12vw;
+}
+
+.arrowPointingDown {
+  position: absolute;
+  top: -6rem;
+  left: 6rem;
+  width: 12vw;
+}
+
+@media (max-width: 920px) {
+  .arrowPointingDown {
+    left: 12rem;
+  }
+}
+
+@media (max-width: 648px) {
+  .main {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .left,
+  .right,
+  .statusRow {
+    width: 100%;
+  }
+
+  .right {
+    align-items: center;
+  }
+
+  .arrowPointingDown {
+    top: -1rem;
+    left: 50%;
+    translate: -50% 0;
+  }
+}

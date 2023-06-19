@@ -18,6 +18,11 @@
   align-items: flex-start;
 }
 
+.flexColEnd {
+  @extend .flexCol;
+  align-items: flex-end;
+}
+
 .flexCenter {
   display: flex;
   align-items: center;
