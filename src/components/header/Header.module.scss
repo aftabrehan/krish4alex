@@ -3,7 +3,6 @@
 .header {
   @extend .spaceBetween;
   align-self: center;
-  max-width: 1024px;
   width: 100%;
   padding: 2rem;
 }
@@ -82,6 +81,7 @@
   transform-origin: top right;
   animation: blowUp 0.15s ease-in-out forwards;
   display: none;
+  z-index: 1;
 
   &:not(.showMobileNav) {
     display: none;
@@ -113,7 +113,7 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 648px) {
   .header {
     padding: 2rem 1rem;
   }

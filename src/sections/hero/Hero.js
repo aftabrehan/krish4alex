@@ -2,11 +2,11 @@ import Image from 'next/image'
 
 import Button from 'components/button'
 
-import Logo from 'assets/svg/logo-big.svg'
 import SendIcon from 'assets/svg/send.svg'
 
 import BlackLine from 'assets/png/black-line.png'
 import HeroImage from 'assets/png/hero.png'
+import Logo from 'assets/png/logo.png'
 import MiniBoxArt from 'assets/png/mini-box-art.png'
 import ArrowPointingDown from 'assets/png/arrow-pointing-down.png'
 
@@ -19,10 +19,12 @@ const Hero = () => {
     <section className={stl.section}>
       <div className={stl.main}>
         <div className={stl.left}>
-          <Logo />
+          <Image src={Logo} alt="logo" />
           <h3>
-            <Image src={BlackLine} alt="black-line" />
-            User Interface Designer
+            <span>
+              <Image src={BlackLine} alt="black-line" />
+            </span>
+            <span>User Interface Designer</span>
           </h3>
           <p className={stl.secondaryText}>
             I’m UI/UX designer in lucknow , and I’m very passionate and

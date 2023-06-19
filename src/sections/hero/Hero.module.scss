@@ -16,8 +16,9 @@
 .left {
   @extend .flexColStart;
   width: 50%;
-  gap: 3rem;
   height: 100%;
+  gap: 3rem;
+  padding: 0 3rem;
 
   h3 {
     @extend .flexCenter;
@@ -28,6 +29,10 @@
     line-height: 31px;
     white-space: nowrap;
     color: $black;
+
+    span {
+      @extend .flexCenter;
+    }
   }
 }
 
@@ -107,14 +112,15 @@
 
 .arrowPointingDown {
   position: absolute;
-  top: -6rem;
-  left: 6rem;
+  top: -7rem;
+  left: 8rem;
   width: 12vw;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 936px) {
   .arrowPointingDown {
-    left: 12rem;
+    top: -6rem;
+    left: 16rem;
   }
 }
 
@@ -130,6 +136,15 @@
     width: 100%;
   }
 
+  .left {
+    align-items: center;
+
+    h3,
+    p {
+      text-align: center;
+    }
+  }
+
   .right {
     align-items: center;
   }
@@ -138,5 +153,17 @@
     top: -1rem;
     left: 50%;
     translate: -50% 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .left h3 {
+    white-space: normal;
+  }
+
+  .left h3 > span:first-of-type,
+  .miniArtBox,
+  .arrowPointingDown {
+    display: none;
   }
 }
