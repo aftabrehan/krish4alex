@@ -1,0 +1,31 @@
+@import 'styles/common';
+
+.container {
+  @extend .flexCol;
+  gap: 1rem;
+  position: absolute;
+  top: 75px;
+  left: 2rem;
+}
+
+.horizontalLine {
+  margin-left: 0.75rem;
+  width: 1px;
+  height: 100px;
+  background-color: $black;
+}
+
+.links {
+  @extend .flexCenterCol;
+  gap: 1rem;
+}
+
+.link {
+  padding: 0;
+}
+
+@media (max-width: 648px) {
+  .container {
+    left: 1rem;
+  }
+}
