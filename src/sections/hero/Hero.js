@@ -39,7 +39,7 @@ const Hero = () => {
         <div className={stl.right}>
           <Image src={HeroImage} alt="hero-image" priority />
           <div className={stl.statusRow}>
-            <span className={stl.greenBox} />
+            <span className={stl.yellowBox} />
             Currently working on <span>{currentActivity}</span>
           </div>
         </div>
