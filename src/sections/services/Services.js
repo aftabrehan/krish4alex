@@ -30,7 +30,7 @@ const Services = () => {
   ]
 
   return (
-    <section className={stl.section} id="services">
+    <section className={stl.section} id="servicesSection">
       <div className={stl.heading}>
         <h3>
           <span>#</span>Services

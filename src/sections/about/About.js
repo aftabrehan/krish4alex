@@ -35,7 +35,7 @@ const About = () => {
   ]
 
   return (
-    <section className={stl.section} id="about">
+    <section className={stl.section} id="aboutSection">
       <div className={stl.heading}>
         <h3>
           <span>#</span>About Me
