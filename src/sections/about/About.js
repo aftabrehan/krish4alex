@@ -93,7 +93,14 @@ const About = () => {
           </div>
 
           <div className={stl.btnWrapper}>
-            <Button>
+            <Button
+              onClick={() =>
+                window.open(
+                  'https://drive.google.com/file/d/1hHyN_GqHYQxoMq_MppTH9ceUw-z9ftJq/view?usp=drive_link',
+                  '_blank'
+                )
+              }
+            >
               Download CV
               <PageIcon />
             </Button>
