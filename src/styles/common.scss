@@ -67,3 +67,9 @@
   border: none;
   background: none;
 }
+
+.textEllipses {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

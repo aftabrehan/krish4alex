@@ -1,0 +1,214 @@
+@import 'styles/common';
+
+.section {
+  @extend .flexCol;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.heading {
+  @extend .flexStart;
+  align-items: center;
+  gap: 1rem;
+
+  h3 {
+    @extend .flexStart;
+    gap: 0.5rem;
+    font-family: 'Preahvihear';
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 58px;
+    color: $black;
+    white-space: nowrap;
+
+    span {
+      font-family: 'Fira Code';
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 42px;
+      color: $primaryClr;
+    }
+  }
+}
+
+.main {
+  @extend .spaceBetween;
+  gap: 2rem;
+}
+
+.left {
+  @extend .flexColStart;
+  align-self: flex-end;
+  width: 50%;
+}
+
+.right {
+  @extend .flexColStart;
+  width: 50%;
+  gap: 2rem;
+}
+
+.aboutArt {
+  @extend .flexCenter;
+}
+
+.statusRow {
+  @extend .flexStart;
+  align-items: center;
+  gap: 0.5rem;
+  width: 90%;
+  max-width: 400px;
+  padding: 0.75rem 0.5rem;
+  color: $veryLightGray;
+  background-color: $black;
+
+  p {
+    @extend .textEllipses;
+    max-width: calc(100% - 1rem - 0.5rem);
+  }
+}
+
+.greenBox {
+  width: 1rem;
+  height: 1rem;
+  background-color: $green;
+}
+
+.features {
+  @extend .flexStart;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.feature {
+  @extend .flexCenterCol;
+  gap: 0.5rem;
+
+  div {
+    font-family: 'Preahvihear';
+    font-weight: 400;
+    font-size: 19.172px;
+    line-height: 35px;
+    color: $black;
+  }
+
+  span {
+    font-family: 'Preahvihear';
+    font-weight: 400;
+    font-size: 16.2781px;
+    line-height: 29px;
+    color: $veryLightGray;
+  }
+}
+
+.about {
+  @extend .flexColStart;
+  gap: 1rem;
+
+  h4 {
+    font-family: 'Preahvihear';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: $black;
+  }
+
+  p {
+    font-family: 'Preahvihear';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: $lightGray;
+  }
+}
+
+.btnWrapper {
+  @extend .flexStart;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dotsArt {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  display: none;
+}
+
+.miniBoxArt {
+  position: absolute;
+  bottom: 40px;
+  right: 10px;
+  display: none;
+}
+
+@media (max-width: 936px) {
+  .main {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .left {
+    align-items: center;
+    width: 100%;
+  }
+
+  .aboutArt {
+    display: none;
+  }
+
+  .statusRow {
+    max-width: unset;
+  }
+
+  .right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 648px) {
+  .statusRow {
+    width: 100%;
+  }
+
+  .right {
+    align-items: center;
+  }
+
+  .about {
+    order: 0;
+    align-items: center;
+
+    h4,
+    p {
+      text-align: center;
+    }
+  }
+
+  .features {
+    width: 100%;
+    flex-direction: column;
+    order: 1;
+  }
+
+  .dotsArt,
+  .miniBoxArt {
+    display: block;
+  }
+
+  .btnWrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    order: 2;
+  }
+}

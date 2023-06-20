@@ -20,3 +20,14 @@
     opacity: 0.5;
   }
 }
+
+.secondary {
+  border: 1px solid $veryLightGray;
+  color: $black;
+  background-color: transparent;
+
+  &:hover {
+    border-color: $black;
+    opacity: 1;
+  }
+}
