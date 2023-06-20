@@ -19,7 +19,9 @@ const Hero = () => {
     <section className={stl.section}>
       <div className={stl.main}>
         <div className={stl.left}>
-          <Image src={Logo} alt="logo" />
+          <div className={stl.logo}>
+            <Image src={Logo} alt="logo" />
+          </div>
           <h3>
             <span>
               <Image src={BlackLine} alt="black-line" />
@@ -37,7 +39,7 @@ const Hero = () => {
         <div className={stl.right}>
           <Image src={HeroImage} alt="hero-image" priority />
           <div className={stl.statusRow}>
-            <span className={stl.yellowBox} />
+            <span className={stl.greenBox} />
             Currently working on <span>{currentActivity}</span>
           </div>
         </div>

@@ -26,7 +26,7 @@ const ProfileLinks = ({ customClass }) => {
 
   return (
     <div className={clsx(stl.container, customClass)}>
-      <div className={stl.horizontalLine} />
+      <div className={stl.verticalLine} />
 
       <div className={stl.links}>
         {profileLinks.map(({ icon, link }, i) => (

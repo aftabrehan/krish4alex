@@ -1,3 +1,4 @@
 import Hero from './hero'
+import About from './about'
 
-export { Hero }
+export { Hero, About }
