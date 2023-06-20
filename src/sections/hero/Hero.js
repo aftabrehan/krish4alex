@@ -16,7 +16,7 @@ const Hero = () => {
   const currentActivity = 'Portfolio'
 
   return (
-    <section className={stl.section}>
+    <section className={stl.section} id="heroSection">
       <div className={stl.main}>
         <div className={stl.left}>
           <div className={stl.logo}>
