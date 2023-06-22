@@ -22,6 +22,10 @@
 
 .link {
   padding: 0;
+
+  &:hover svg path {
+    fill: $primaryClr;
+  }
 }
 
 @media (max-width: 648px) {

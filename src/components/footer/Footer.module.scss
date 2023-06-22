@@ -1,0 +1,105 @@
+@import 'styles/common';
+
+.footer {
+  width: 100%;
+  background-color: $halfWhite;
+}
+
+.main {
+  @extend .flexCenterCol;
+  max-width: 1180px;
+  gap: 2rem;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.content {
+  @extend .spaceBetween;
+  width: 100%;
+  gap: 3rem;
+}
+
+.about {
+  @extend .flexColStart;
+  gap: 2rem;
+
+  h6 {
+    @extend .flexCenter;
+    gap: 0.5rem;
+    font-family: 'Fira Code', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: $black;
+  }
+
+  p {
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: $gray0;
+  }
+}
+
+.media {
+  @extend .flexColEnd;
+  gap: 1rem;
+
+  h6 {
+    @extend .flexCenter;
+    gap: 0.5rem;
+    font-size: 20px;
+    font-weight: 500;
+    color: $black;
+  }
+}
+
+.links {
+  @extend .flexEnd;
+  align-items: center;
+  gap: 1rem;
+}
+
+.link {
+  padding: 0;
+
+  &:hover svg path {
+    fill: $primaryClr;
+  }
+}
+
+.copyRight {
+  font-family: 'Preahvihear', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: $lightGray;
+  text-align: center;
+
+  a {
+    color: $primaryClr;
+  }
+}
+
+@media (max-width: 648px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .about,
+  .media {
+    align-items: center;
+  }
+
+  .media {
+    width: 100%;
+    max-width: 320px;
+    height: 100px;
+    padding: 1rem;
+    border-radius: 16px;
+    background-color: $white;
+    box-shadow: 2px 4px 8px $tBlack;
+  }
+
+  .about p {
+    text-align: center;
+  }
+}
