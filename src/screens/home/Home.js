@@ -2,15 +2,7 @@ import Head from 'next/head'
 
 import Header from 'components/header'
 import ProfileLinks from 'components/profile-links'
-import {
-  Hero,
-  About,
-  Services,
-  Skills,
-  Projects,
-  Qualification,
-  Testimonial,
-} from 'sections'
+import { Hero, About, Services, Skills, Projects, Testimonial } from 'sections'
 import Footer from 'components/footer'
 
 import stl from './Home.module.scss'
@@ -28,7 +20,6 @@ const Home = () => (
       <Services />
       <Skills />
       <Projects />
-      <Qualification />
       <Testimonial />
     </div>
 
