@@ -1,0 +1,142 @@
+@import 'styles/common';
+
+.section {
+  @extend .flexCol;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.head {
+  @extend .spaceBetween;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.heading {
+  @extend .flexStart;
+  align-items: center;
+  gap: 1rem;
+
+  h3 {
+    @extend .flexStart;
+    gap: 0.5rem;
+    font-family: 'Preahvihear', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 58px;
+    color: $black;
+    white-space: nowrap;
+
+    span {
+      font-family: 'Fira Code', sans-serif;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 42px;
+      color: $primaryClr;
+    }
+  }
+}
+
+.viewAllBtn {
+  font-family: 'Fira Code', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: $black;
+
+  &:hover {
+    color: $primaryClr;
+    text-decoration: underline;
+  }
+}
+
+.projects {
+  @extend .spaceBetween;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 350px;
+  height: 440px;
+  border: 1px solid $black;
+}
+
+.imageBox {
+  @extend .flexCenter;
+  width: 100%;
+  height: 200px;
+  border-bottom: 1px solid $black;
+}
+
+.metaBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(100% - 200px);
+  padding: 1rem 0;
+}
+
+.skill,
+.description {
+  font-family: 'Preahvihear', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: $charcoalGray;
+  padding: 0 1rem;
+}
+
+.description {
+  color: $lightGray;
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 1px solid $black;
+}
+
+.title {
+  font-family: 'Fira Code', sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  color: $black;
+  padding: 0 1rem;
+}
+
+.linkBtn {
+  @extend .flexCenter;
+  width: max-content;
+  gap: 0.5rem;
+  margin: 0 1rem;
+  padding: 0.5rem;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid $black;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+
+  svg path {
+    stroke: $black;
+    transition: stroke 0.25s ease-in-out;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $black;
+
+    svg path {
+      stroke: $white;
+    }
+  }
+}
+
+@media (max-width: 648px) {
+  .projects {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
