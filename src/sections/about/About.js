@@ -14,6 +14,7 @@ import DotsArt from 'assets/png/dots-art.png'
 import MiniBoxArt from 'assets/png/mini-box-art.png'
 
 import stl from './About.module.scss'
+import { scrollToSection } from 'lib'
 
 const About = () => {
   const features = [
@@ -105,7 +106,10 @@ const About = () => {
               <PageIcon />
             </Button>
 
-            <Button variant="secondary">
+            <Button
+              onClick={() => scrollToSection('skillsSection')}
+              variant="secondary"
+            >
               Read More
               <ForwardIcon />
             </Button>
