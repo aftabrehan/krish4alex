@@ -11,6 +11,7 @@ import {
   Qualification,
   Testimonial,
 } from 'sections'
+import Footer from 'components/footer'
 
 import stl from './Home.module.scss'
 
@@ -30,6 +31,8 @@ const Home = () => (
       <Qualification />
       <Testimonial />
     </div>
+
+    <Footer />
   </>
 )
 
