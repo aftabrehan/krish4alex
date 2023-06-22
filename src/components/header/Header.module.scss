@@ -9,7 +9,7 @@
   background-color: $white;
   box-shadow: 0 2px 8px transparent;
   transition: box-shadow 0.25s ease-in-out;
-  z-index: 1;
+  z-index: 999;
 
   &.scrolled {
     box-shadow: 0 2px 8px $tBlack;
@@ -20,7 +20,7 @@
   @extend .spaceBetween;
   align-self: center;
   width: 100%;
-  max-width: 1130px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 2rem;
 }
