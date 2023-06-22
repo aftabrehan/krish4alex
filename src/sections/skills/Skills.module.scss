@@ -17,7 +17,7 @@
   h3 {
     @extend .flexStart;
     gap: 0.5rem;
-    font-family: 'Preahvihear';
+    font-family: 'Preahvihear', sans-serif;
     font-weight: 400;
     font-size: 32px;
     line-height: 58px;
@@ -25,7 +25,7 @@
     white-space: nowrap;
 
     span {
-      font-family: 'Fira Code';
+      font-family: 'Fira Code', sans-serif;
       font-weight: 500;
       font-size: 32px;
       line-height: 42px;
@@ -65,7 +65,7 @@
 
 .head {
   font-size: 16px;
-  font-family: 'Preahvihear';
+  font-family: 'Preahvihear', sans-serif;
   padding: 0 1rem;
   color: $black;
 }
@@ -85,7 +85,7 @@
 .skill {
   font-size: 16px;
   font-weight: 400;
-  font-family: 'Fira Code';
+  font-family: 'Fira Code', sans-serif;
 }
 
 .dotsArt {

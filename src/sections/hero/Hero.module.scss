@@ -23,7 +23,7 @@
   h3 {
     @extend .flexCenter;
     gap: 0.75rem;
-    font-family: 'Preahvihear';
+    font-family: 'Preahvihear', sans-serif;
     font-weight: 400;
     font-size: 17px;
     line-height: 31px;
@@ -41,7 +41,7 @@
 }
 
 .secondaryText {
-  font-family: 'Preahvihear';
+  font-family: 'Preahvihear', sans-serif;
   font-weight: 400;
   font-size: 14.9843px;
   line-height: 27px;
@@ -86,7 +86,7 @@
 
 .upperText {
   margin-left: 1rem;
-  font-family: 'Preahvihear';
+  font-family: 'Preahvihear', sans-serif;
   font-weight: 400;
   font-size: 26.8653px;
   line-height: 49px;
@@ -96,7 +96,7 @@
 
 .mainText {
   max-width: 374px;
-  font-family: 'Preahvihear';
+  font-family: 'Preahvihear', sans-serif;
   font-weight: 400;
   font-size: 48.5251px;
   line-height: 61px;
@@ -151,6 +151,14 @@
 
   .right {
     align-items: center;
+  }
+
+  .upperText {
+    margin-left: 0;
+  }
+
+  .mainText {
+    font-size: 43px;
   }
 
   .arrowPointingDown {
