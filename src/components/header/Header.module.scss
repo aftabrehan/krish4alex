@@ -2,13 +2,14 @@
 
 .header {
   width: 100%;
-  background-color: $white;
+  height: 86px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  background-color: $white;
   box-shadow: 0 2px 8px transparent;
   transition: box-shadow 0.25s ease-in-out;
+  z-index: 1;
 
   &.scrolled {
     box-shadow: 0 2px 8px $tBlack;

@@ -1,7 +1,7 @@
 export const scrollToSection = sectionId => {
   const section = document.getElementById(sectionId)
   if (section) {
-    const yOffset = -75 // adjust as needed to account for any fixed headers or other elements
+    const yOffset = -86 // adjust as needed to account for any fixed headers or other elements
     const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset
     window.scrollTo({ top: y, behavior: 'smooth' })
   }
