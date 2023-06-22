@@ -1,0 +1,41 @@
+@import 'styles/common';
+
+.section {
+  @extend .flexCol;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.heading {
+  @extend .flexStart;
+  align-items: center;
+  gap: 1rem;
+
+  h3 {
+    @extend .flexStart;
+    gap: 0.5rem;
+    font-family: 'Preahvihear', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 58px;
+    color: $black;
+    white-space: nowrap;
+
+    span {
+      font-family: 'Fira Code', sans-serif;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 42px;
+      color: $primaryClr;
+    }
+  }
+}
+
+.content {
+  @extend .flexCenter;
+  width: 100%;
+  padding: 1rem 0;
+}

@@ -9,6 +9,7 @@ import {
   Skills,
   Projects,
   Qualification,
+  Testimonial,
 } from 'sections'
 
 import stl from './Home.module.scss'
@@ -27,6 +28,7 @@ const Home = () => (
       <Skills />
       <Projects />
       <Qualification />
+      <Testimonial />
     </div>
   </>
 )
