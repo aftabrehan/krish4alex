@@ -40,6 +40,12 @@
   }
 }
 
+@keyframes spin {
+  100% {
+    rotate: (1turn);
+  }
+}
+
 @keyframes rotateFromLeftTop {
   0% {
     transform: translateX(-100%) rotate(280deg);
