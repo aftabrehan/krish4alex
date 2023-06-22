@@ -1,0 +1,127 @@
+@import 'styles/common';
+
+.section {
+  @extend .flexCol;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.heading {
+  @extend .flexStart;
+  align-items: center;
+  gap: 1rem;
+
+  h3 {
+    @extend .flexStart;
+    gap: 0.5rem;
+    font-family: 'Preahvihear';
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 58px;
+    color: $black;
+    white-space: nowrap;
+
+    span {
+      font-family: 'Fira Code';
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 42px;
+      color: $primaryClr;
+    }
+  }
+}
+
+.content {
+  @extend .spaceBetween;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.left {
+  @extend .flexColStart;
+  align-items: center;
+}
+
+.right {
+  @extend .flexCenter;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+}
+
+.table {
+  @extend .flexColStart;
+  width: 180px;
+  gap: 1rem;
+  padding: 1rem 0;
+  background-color: $white;
+  border: 1px solid $black;
+  z-index: 1;
+}
+
+.head {
+  font-size: 16px;
+  font-family: 'Preahvihear';
+  padding: 0 1rem;
+  color: $black;
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 1px solid $black;
+}
+
+.skills {
+  @extend .flexStart;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  gap: 0.5rem;
+}
+
+.skill {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Fira Code';
+}
+
+.dotsArt {
+  position: absolute;
+  bottom: 30%;
+  left: -24px;
+  display: none;
+}
+
+.miniBoxArt {
+  position: absolute;
+  bottom: 40%;
+  right: 0;
+  display: none;
+
+  &:last-of-type {
+    bottom: 80%;
+    right: unset;
+    left: 10px;
+  }
+}
+
+@media (max-width: 648px) {
+  .left {
+    display: none;
+  }
+
+  .right {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .dotsArt,
+  .miniBoxArt {
+    display: block;
+  }
+}

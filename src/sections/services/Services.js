@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import WebDesignIcon from 'assets/svg/web-design.svg'
 import CodeIcon from 'assets/svg/code.svg'
@@ -8,7 +9,6 @@ import ArrowDotIcon from 'assets/svg/arrow-dot.svg'
 import HorizontalOrangeLine from 'assets/png/horizontal-orange-line.png'
 
 import stl from './Services.module.scss'
-import Link from 'next/link'
 
 const Services = () => {
   const services = [
