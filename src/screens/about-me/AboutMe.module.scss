@@ -1,0 +1,189 @@
+@import 'styles/common';
+
+.main {
+  @extend .flexCol;
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+  margin-top: 4rem;
+  max-width: 868px;
+  margin: 0 auto;
+}
+
+.heroSection {
+  @extend .flexCol;
+  width: 100%;
+  gap: 4rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.avatarRow {
+  @extend .flexStart;
+  align-items: center;
+  gap: 2rem;
+  margin: 4rem 0 0 2rem;
+}
+
+.helloBox {
+  @extend .flexStart;
+  top: 5%;
+  left: 35%;
+  position: absolute;
+
+  p {
+    margin: 0;
+    font-family: 'Preahvihear', sans-serif;
+    font-weight: 400;
+    font-size: 17.73px;
+    color: $black;
+
+    span {
+      color: $primaryClr;
+    }
+  }
+
+  .arrowDown {
+    position: absolute;
+    top: 30%;
+    left: -45%;
+  }
+}
+
+.mainInfo {
+  @extend .flexCol;
+  gap: 0.5rem;
+}
+
+.upperText {
+  font-family: 'Preahvihear', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $black;
+  text-decoration: underline;
+}
+
+.mainText {
+  max-width: 374px;
+  font-family: 'Preahvihear', sans-serif;
+  font-weight: 400;
+  font-size: 46px;
+  line-height: 56px;
+  color: $black;
+
+  span {
+    color: $primaryClr;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -20px;
+      translate: 0 -50%;
+      width: 130%;
+      height: 68px;
+      border: 1px solid $black;
+      border-radius: 100%;
+      animation: spin 10s ease-in-out infinite alternate;
+      z-index: -1;
+      background-color: transparent;
+    }
+
+    &::before {
+      animation-delay: 0.25s;
+    }
+
+    &::after {
+      animation-delay: 0.5s;
+      animation-direction: alternate-reverse;
+    }
+  }
+}
+
+.secondaryText {
+  font-family: 'Preahvihear', sans-serif;
+  font-weight: 400;
+  font-size: 14.9843px;
+  line-height: 27px;
+  color: $lightGray;
+}
+
+.miniArtBox {
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  width: 12vw;
+}
+
+.headline {
+  @extend .flexCol;
+
+  h3 {
+    margin: 0;
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 84px;
+    letter-spacing: 1px;
+    color: $black;
+  }
+
+  h4 {
+    margin: 0;
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 20%;
+    color: $black;
+  }
+}
+
+@media (max-width: 668px) {
+  .main {
+    margin-top: 4rem;
+  }
+
+  .avatarRow {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .helloBox {
+    top: -5%;
+    left: unset;
+    right: 5%;
+
+    .arrowDown {
+      rotate: 140deg;
+      top: 50px;
+      left: unset;
+      right: 5%;
+    }
+  }
+
+  .mainText span {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .headline {
+    align-items: center;
+
+    h3 {
+      font-size: 37.21px;
+      line-height: 67.23px;
+      letter-spacing: 2%;
+      text-align: center;
+    }
+
+    h4 {
+      text-align: center;
+      color: $lightGray;
+    }
+  }
+}

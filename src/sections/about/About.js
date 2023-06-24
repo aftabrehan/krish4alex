@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 import Button from 'components/button'
 
@@ -14,9 +15,10 @@ import DotsArt from 'assets/png/dots-art.png'
 import MiniBoxArt from 'assets/png/mini-box-art.png'
 
 import stl from './About.module.scss'
-import { scrollToSection } from 'lib'
 
 const About = () => {
+  const router = useRouter()
+
   const features = [
     {
       icon: <MedalIcon />,
@@ -107,7 +109,7 @@ const About = () => {
             </Button>
 
             <Button
-              onClick={() => scrollToSection('skillsSection')}
+              onClick={() => router.push('/about-me')}
               variant="secondary"
             >
               Read More
