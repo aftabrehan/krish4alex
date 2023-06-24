@@ -32,7 +32,7 @@ const Document = () => (
       />
       <meta
         property="og:image"
-        content="https://https://krish4alex.vercel.app/assets/png/metaimage.png"
+        content="https://krish4alex.vercel.app/assets/png/metaimage.png"
       />
       <meta property="twitter:card" content="summary_large_image" />
       <meta
@@ -45,7 +45,7 @@ const Document = () => (
       />
       <meta
         property="twitter:image"
-        content="https://https://krish4alex.vercel.app/assets/png/metaimage.png"
+        content="https://krish4alex.vercel.app/assets/png/metaimage.png"
       />
     </Head>
     <body>
