@@ -3,7 +3,7 @@ import { Hero, About, Services, Skills, Projects, Testimonial } from 'sections'
 
 const Home = () => (
   <Layout>
-    <Hero />
+    <Hero showBottomSection />
     <About />
     <Services />
     <Skills />
