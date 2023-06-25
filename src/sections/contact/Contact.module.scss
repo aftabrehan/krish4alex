@@ -46,8 +46,8 @@
 
   &:hover {
     border-color: $primaryClr;
-    translate: 2px -2px;
     box-shadow: 0 6px 8px $tBlack25;
+    translate: 2px -2px;
 
     .label,
     .value,

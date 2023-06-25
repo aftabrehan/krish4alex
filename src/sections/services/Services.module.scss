@@ -39,7 +39,7 @@
   gap: 1rem;
 }
 
-.service {
+.serviceCard {
   @extend .flexColStart;
   justify-content: center;
   width: calc(33% - 1rem);
@@ -49,6 +49,31 @@
   padding: 7rem 2rem 2rem;
   border: 1px solid $black;
   border-radius: 24px;
+  transition: translate 0.25s ease-in-out, box-shadow 0.25s ease-in-out,
+    border-color 0.25s ease-in-out;
+
+  svg path {
+    transition: fill 0.25s ease-in-out;
+  }
+
+  &:hover {
+    border-color: $primaryClr;
+    box-shadow: 0 6px 8px $tBlack25;
+    translate: 2px -2px;
+
+    & > svg path {
+      fill: $primaryClr;
+    }
+
+    .label span,
+    .link {
+      color: $primaryClr;
+
+      svg path {
+        fill: $primaryClr;
+      }
+    }
+  }
 }
 
 .label {
@@ -61,6 +86,7 @@
     font-size: 18.7826px;
     line-height: 34px;
     color: $charcoalGray;
+    transition: color 0.25s ease-in-out;
   }
 }
 
@@ -73,14 +99,10 @@
   font-size: 13px;
   line-height: 20px;
   color: $ashGray;
+  transition: color 0.25s ease-in-out;
 
-  &:hover {
-    text-decoration: underline;
-    color: $primaryClr;
-
-    svg path {
-      fill: $primaryClr;
-    }
+  svg path {
+    fill: $ashGray;
   }
 }
 
@@ -89,7 +111,7 @@
     flex-direction: column;
   }
 
-  .service {
+  .serviceCard {
     width: calc(100% - 2rem);
   }
 }

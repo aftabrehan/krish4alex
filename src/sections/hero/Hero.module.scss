@@ -185,6 +185,11 @@
 
   .mainText {
     font-size: 43px;
+
+    span::before,
+    span::after {
+      display: none;
+    }
   }
 
   .arrowPointingDown {

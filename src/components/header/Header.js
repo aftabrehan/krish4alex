@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import Logo from 'assets/svg/logo.svg'
 import AppsIcon from 'assets/svg/apps.svg'
 
-import { scrollToSection, scrollToTop } from 'lib/utils'
+import { scrollToSection } from 'lib/utils'
 import { useClickOutside } from 'lib/hooks'
 
 import stl from './Header.module.scss'
@@ -45,7 +45,7 @@ const Header = ({ customClass }) => {
     <Link key={label} href={href} passHref>
       <a
         onClick={() => {
-          id ? scrollToSection(id) : scrollToTop()
+          scrollToSection(id)
           setShowMobileNav(false)
         }}
         className={clsx(
