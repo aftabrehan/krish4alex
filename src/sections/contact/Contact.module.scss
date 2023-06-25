@@ -99,6 +99,15 @@
   width: 100%;
   max-width: 520px;
   gap: 1rem;
+
+  &.disabledForm {
+    pointer-events: none;
+    animation: loading 1s ease-in-out infinite alternate;
+
+    .submitBtn svg {
+      animation: spin 1s ease-in-out infinite;
+    }
+  }
 }
 
 .fieldBox {
@@ -148,6 +157,15 @@
 
 .submitBtn {
   width: max-content;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 0.75;
+  }
 }
 
 @media (max-width: 768px) {

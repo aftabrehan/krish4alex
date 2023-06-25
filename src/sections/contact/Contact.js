@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
+import clsx from 'clsx'
 
 import Button from 'components/button'
 
@@ -8,6 +9,7 @@ import WhatsAppIcon from 'assets/svg/whatsapp.svg'
 import MessengerIcon from 'assets/svg/messenger.svg'
 import ArrowDotIcon from 'assets/svg/arrow-dot.svg'
 import SendIcon from 'assets/svg/send.svg'
+import SpinnerIcon from 'assets/svg/spinner.svg'
 
 import stl from './Contact.module.scss'
 
@@ -15,6 +17,7 @@ const Contact = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const otherOptions = [
     {
@@ -37,8 +40,30 @@ const Contact = () => {
     },
   ]
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
+
+    setIsLoading(true)
+
+    const values = { name, email, message }
+
+    const { status } = await fetch(
+      'https://krish4alex-api.web.app/v1/messages',
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      }
+    )
+
+    if (status === 200) {
+      // @todo: show success toast
+    }
+
+    setIsLoading(false)
   }
 
   return (
@@ -66,7 +91,10 @@ const Contact = () => {
       <div className={stl.right}>
         <h3>Let&apos;s talk!</h3>
 
-        <form onSubmit={handleSubmit} className={stl.form}>
+        <form
+          onSubmit={handleSubmit}
+          className={clsx(stl.form, isLoading && stl.disabledForm)}
+        >
           <div className={stl.fieldBox}>
             <input
               placeholder="your name"
@@ -106,7 +134,7 @@ const Contact = () => {
           </div>
 
           <Button customClass={stl.submitBtn}>
-            Send Message <SendIcon />
+            Send Message {isLoading ? <SpinnerIcon /> : <SendIcon />}
           </Button>
         </form>
       </div>
