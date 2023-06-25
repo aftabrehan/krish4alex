@@ -32,8 +32,8 @@ const Contact = () => {
     {
       icon: <MessengerIcon />,
       label: 'Messanger',
-      value: 'user.fb123',
-      link: '/',
+      value: 'user.1023...',
+      link: 'https://www.facebook.com/messages/t/100016657608835',
     },
   ]
 
