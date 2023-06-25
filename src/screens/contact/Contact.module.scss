@@ -1,0 +1,15 @@
+@import 'styles/common';
+
+.main {
+  @extend .flexCol;
+  width: 100%;
+  height: 100%;
+  gap: 6rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .main {
+    gap: 2rem;
+  }
+}

@@ -38,7 +38,7 @@ const Header = ({ customClass }) => {
     { label: 'About', href: '/about-me', id: 'aboutPage' },
     { label: 'Services', href: '/#services', id: 'servicesSection' },
     { label: 'Skills', href: '/#skills', id: 'skillsSection' },
-    { label: 'Contact', href: '/#contact', id: 'contactSection' },
+    { label: 'Contact', href: '/contact', id: 'contactSection' },
   ]
 
   const navMenu = navLinks.map(({ label, href, id }) => (

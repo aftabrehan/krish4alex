@@ -5,5 +5,15 @@ import Skills from './skills'
 import Projects from './projects'
 import Qualification from './qualification'
 import Testimonial from './testimonial'
+import Contact from './contact'
 
-export { Hero, About, Services, Skills, Projects, Qualification, Testimonial }
+export {
+  Hero,
+  About,
+  Services,
+  Skills,
+  Projects,
+  Qualification,
+  Testimonial,
+  Contact,
+}

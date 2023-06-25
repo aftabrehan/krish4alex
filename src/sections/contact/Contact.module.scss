@@ -1,0 +1,172 @@
+@import 'styles/common';
+
+.container {
+  @extend .spaceBetween;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem;
+  margin-bottom: 4rem;
+  font-family: 'Preahvihear', sans-serif;
+
+  h3 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 17px;
+    color: $black;
+  }
+}
+
+.left {
+  @extend .flexCenterCol;
+  gap: 1.5rem;
+  width: 40%;
+}
+
+.otherOptions {
+  @extend .flexCenterCol;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.optionCard {
+  @extend .flexCenterCol;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  gap: 0.5rem;
+  border: 1px solid $black;
+  border-radius: 24px;
+  box-shadow: 0 6px 8px transparent;
+  transition: translate 0.25s ease-in-out, box-shadow 0.25s ease-in-out,
+    border-color 0.25s ease-in-out;
+
+  svg path {
+    transition: fill 0.25s ease-in-out;
+  }
+
+  &:hover {
+    border-color: $primaryClr;
+    translate: 2px -2px;
+    box-shadow: 0 6px 8px $tBlack25;
+
+    .label,
+    .value,
+    .btn {
+      color: $primaryClr;
+    }
+
+    svg path {
+      fill: $primaryClr;
+    }
+  }
+}
+
+.label {
+  font-weight: 400;
+  font-size: 16px;
+  color: $gray0;
+  transition: color 0.25s ease-in-out;
+}
+
+.value {
+  font-weight: 400;
+  font-size: 16px;
+  color: $veryLightGray;
+  transition: color 0.25s ease-in-out;
+}
+
+.btn {
+  @extend .flexCenter;
+  gap: 0.25rem;
+  font-weight: 400;
+  font-size: 14px;
+  color: $tBlack25;
+  transition: color 0.25s ease-in-out;
+
+  svg path {
+    fill: $tBlack25;
+  }
+}
+
+.right {
+  @extend .flexCenterCol;
+  gap: 1.5rem;
+  width: 60%;
+}
+
+.form {
+  @extend .flexCol;
+  width: 100%;
+  max-width: 520px;
+  gap: 1rem;
+}
+
+.fieldBox {
+  @extend .flexCol;
+  width: 100%;
+  gap: 0.25rem;
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    color: $ashGray;
+  }
+}
+
+.input,
+.textarea {
+  font-family: 'Preahvihear', sans-serif;
+  width: 100%;
+  padding: 1rem;
+  font-size: 20px;
+  font-weight: 400;
+  border: 1px solid $black;
+  border-radius: 12px;
+  outline: none;
+  color: $black;
+  transition: translate 0.25s ease-in-out, box-shadow 0.25s ease-in-out,
+    border-color 0.25s ease-in-out;
+
+  &:focus {
+    border-color: $primaryClr;
+    box-shadow: 0 6px 8px $tBlack25;
+    translate: 2px -2px;
+  }
+
+  &::placeholder {
+    color: $veryLightGray;
+  }
+}
+
+.textarea {
+  width: 100%;
+  height: 200px;
+  min-height: 180px;
+  max-height: 400px;
+  resize: vertical;
+}
+
+.submitBtn {
+  width: max-content;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .left {
+    width: 100%;
+    order: 1;
+  }
+
+  .right {
+    width: 100%;
+    order: 0;
+  }
+
+  .submitBtn {
+    align-self: center;
+  }
+}
