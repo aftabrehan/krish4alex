@@ -8,6 +8,8 @@ import ArrowDotIcon from 'assets/svg/arrow-dot.svg'
 
 import HorizontalOrangeLine from 'assets/png/horizontal-orange-line.png'
 
+import { scrollToSection } from 'lib/utils'
+
 import stl from './Services.module.scss'
 
 const Services = () => {
@@ -16,16 +18,19 @@ const Services = () => {
       icon: <WebDesignIcon />,
       label: 'Web',
       link: '#skills',
+      id: 'skillsSection',
     },
     {
       icon: <CodeIcon />,
       label: 'UI/Ux',
       link: '#skills',
+      id: 'skillsSection',
     },
     {
       icon: <BrandDesignIcon />,
       label: 'Brand',
       link: '#skills',
+      id: 'skillsSection',
     },
   ]
 
@@ -39,20 +44,20 @@ const Services = () => {
       </div>
 
       <div className={stl.services}>
-        {services.map(({ icon, label, link }, i) => (
-          <div key={i} className={stl.service}>
-            {icon}
-            <div className={stl.label}>
-              <span>{label}</span>
-              <span>Designer</span>
-            </div>
-            <Link href={link} className={stl.link}>
-              <a className={stl.link}>
+        {services.map(({ icon, label, link, id }, i) => (
+          <Link key={i} href={link}>
+            <a onClick={() => scrollToSection(id)} className={stl.serviceCard}>
+              {icon}
+              <div className={stl.label}>
+                <span>{label}</span>
+                <span>Designer</span>
+              </div>
+              <span className={stl.link}>
                 Learn More
                 <ArrowDotIcon />
-              </a>
-            </Link>
-          </div>
+              </span>
+            </a>
+          </Link>
         ))}
       </div>
     </section>
