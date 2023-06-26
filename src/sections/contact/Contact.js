@@ -3,6 +3,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import Button from 'components/button'
+import Toast from 'components/toast'
 
 import EmailIcon from 'assets/svg/email.svg'
 import WhatsAppIcon from 'assets/svg/whatsapp.svg'
@@ -18,6 +19,8 @@ const Contact = () => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [showToast, setShowToast] = useState(false)
+  const [variant, setVariant] = useState('success')
 
   const otherOptions = [
     {
@@ -36,7 +39,7 @@ const Contact = () => {
       icon: <MessengerIcon />,
       label: 'Messanger',
       value: 'user.1023...',
-      link: 'https://www.facebook.com/messages/t/100016657608835',
+      link: 'https://www.facebook.com/messages/t/100010212429617',
     },
   ]
 
@@ -59,11 +62,12 @@ const Contact = () => {
       }
     )
 
-    if (status === 200) {
-      // @todo: show success toast
-    }
+    if (status === 200) setVariant('success')
+    else setVariant('warning')
 
+    setShowToast(true)
     setIsLoading(false)
+    setTimeout(() => setShowToast(false), 5000)
   }
 
   return (
@@ -138,6 +142,8 @@ const Contact = () => {
           </Button>
         </form>
       </div>
+
+      <Toast isOpen={showToast} setIsOpen={setShowToast} variant={variant} />
     </section>
   )
 }

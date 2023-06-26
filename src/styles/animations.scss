@@ -105,6 +105,17 @@
   }
 }
 
+@keyframes slideFromLeft {
+  0% {
+    translate: 100% 0;
+    opacity: 0;
+  }
+  100% {
+    translate: 0;
+    opacity: 1;
+  }
+}
+
 // classes
 .blowUp {
   animation: blowUp 0.25s ease-in-out forwards;
