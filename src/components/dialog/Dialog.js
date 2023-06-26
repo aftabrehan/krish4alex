@@ -30,9 +30,6 @@ const Dialog = ({
     return () => document.removeEventListener('keydown', handleEsc)
   }, [close, closeOnClickAway, isOpen])
 
-  console.log(isOpen)
-  console.log(close)
-
   return (
     <Modal
       isOpen={isOpen}

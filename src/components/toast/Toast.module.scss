@@ -1,0 +1,72 @@
+@import 'styles/common';
+
+.toast {
+  @extend .spaceBetween;
+  align-items: flex-start;
+  width: 360px;
+  position: fixed;
+  top: 4rem;
+  right: 4rem;
+  padding: 1.5rem;
+  background-color: $tealGreen;
+  border-radius: 24px;
+  box-shadow: 0 6px 15px $tBlack25;
+  animation: slideFromLeft 0.25s ease-in-out;
+  pointer-events: all;
+  color: $white;
+
+  &.warning {
+    background-color: $amberOrange;
+  }
+}
+
+.icons {
+  width: 50px;
+}
+
+.icon {
+  position: absolute;
+  top: -20%;
+}
+
+.art {
+  position: absolute;
+  bottom: -3.5px;
+  left: 0;
+}
+
+.textBox {
+  @extend .flexCol;
+  gap: 0.25rem;
+
+  h4 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    max-width: 200px;
+  }
+}
+
+.crossBtn {
+  @extend .clearStyles, .flexCenter;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+@media (max-width: 648px) {
+  .toast {
+    width: calc(100vw - 2rem);
+    right: 50%;
+    translate: 50%;
+    top: 6rem;
+    animation-name: fallFromTop;
+  }
+}
