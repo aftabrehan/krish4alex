@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 
 import Button from 'components/button'
@@ -14,6 +15,8 @@ import ArrowPointingDown from 'assets/png/arrow-pointing-down.png'
 import stl from './Hero.module.scss'
 
 const Hero = ({ showBottomSection }) => {
+  const router = useRouter()
+
   const currentActivity = 'Portfolio'
 
   return (
@@ -34,7 +37,7 @@ const Hero = ({ showBottomSection }) => {
             dedicated to my work.
           </p>
           {showBottomSection && (
-            <Button>
+            <Button onClick={() => router.push('/contact')}>
               say Hello <SendIcon />
             </Button>
           )}
