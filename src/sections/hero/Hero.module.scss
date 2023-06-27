@@ -40,6 +40,11 @@
   @extend .flexCenter;
 }
 
+.btnWrapper {
+  @extend .flexStart;
+  width: 100%;
+}
+
 .secondaryText {
   font-family: 'Preahvihear', sans-serif;
   font-weight: 400;
@@ -173,6 +178,10 @@
     p {
       text-align: center;
     }
+  }
+
+  .btnWrapper {
+    justify-content: center;
   }
 
   .right {

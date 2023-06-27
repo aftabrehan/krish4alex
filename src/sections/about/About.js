@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
 
 import Button from 'components/button'
 
@@ -14,10 +16,17 @@ import AboutArt from 'assets/png/about-art.png'
 import DotsArt from 'assets/png/dots-art.png'
 import MiniBoxArt from 'assets/png/mini-box-art.png'
 
+import { getCommonMotionProps, getScaleMotionProps } from 'lib/utils'
+
 import stl from './About.module.scss'
 
 const About = () => {
+  const [animation, setAnimation] = useState(false)
+
   const router = useRouter()
+
+  const motionProps = getCommonMotionProps(animation, setAnimation)
+  const motionScaleProps = getScaleMotionProps(animation, setAnimation)
 
   const features = [
     {
@@ -39,15 +48,15 @@ const About = () => {
 
   return (
     <section className={stl.section} id="aboutSection">
-      <div className={stl.heading}>
+      <motion.div className={stl.heading} {...motionProps}>
         <h3>
           <span>#</span>About Me
         </h3>
         <Image src={HorizontalOrangeLine} alt="horizontal-orange-line" />
-      </div>
+      </motion.div>
 
       <div className={stl.main}>
-        <div className={stl.left}>
+        <motion.div {...motionScaleProps} className={stl.left}>
           <div className={stl.aboutArt}>
             <Image src={AboutArt} alt="about-art" priority />
           </div>
@@ -60,16 +69,21 @@ const About = () => {
               business goals.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         <div className={stl.right}>
           <div className={stl.features}>
             {features.map(({ icon, title, subTitle }, i) => (
-              <div key={i} className={stl.feature}>
+              <motion.div
+                key={i}
+                className={stl.feature}
+                {...motionProps}
+                transition={{ duration: 0.5, delay: 0.25 + i * 0.1 }}
+              >
                 {icon}
                 <div>{title}</div>
                 <span>{subTitle}</span>
-              </div>
+              </motion.div>
             ))}
 
             <div className={stl.dotsArt}>
@@ -86,16 +100,24 @@ const About = () => {
             </div>
           </div>
 
-          <div className={stl.about}>
+          <motion.div
+            {...motionProps}
+            transition={{ duration: 0.5, delay: 0.45 }}
+            className={stl.about}
+          >
             <h4>Hello, I&apos;m Krish4alex!</h4>
             <p>
               A self-taught UI/UX designer, functioning in the industry for 1+
               years now. I make meaningful and delightful digital products that
               create a equilibrium between user needs and business goals.
             </p>
-          </div>
+          </motion.div>
 
-          <div className={stl.btnWrapper}>
+          <motion.div
+            {...motionProps}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className={stl.btnWrapper}
+          >
             <Button
               onClick={() =>
                 window.open(
@@ -115,7 +137,7 @@ const About = () => {
               Read More
               <ForwardIcon />
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

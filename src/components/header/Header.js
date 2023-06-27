@@ -45,8 +45,8 @@ const Header = ({ customClass }) => {
     <Link key={label} href={href} passHref>
       <a
         onClick={() => {
-          scrollToSection(id)
           setShowMobileNav(false)
+          setTimeout(() => scrollToSection(id), 100)
         }}
         className={clsx(
           stl.hashLink,

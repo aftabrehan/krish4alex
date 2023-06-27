@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
+import { motion } from 'framer-motion'
 
 import Button from 'components/button'
 
@@ -12,10 +14,17 @@ import Logo from 'assets/png/logo.png'
 import MiniBoxArt from 'assets/png/mini-box-art.png'
 import ArrowPointingDown from 'assets/png/arrow-pointing-down.png'
 
+import { getCommonMotionProps, getScaleMotionProps } from 'lib/utils'
+
 import stl from './Hero.module.scss'
 
 const Hero = ({ showBottomSection }) => {
+  const [animation, setAnimation] = useState(false)
+
   const router = useRouter()
+
+  const motionProps = getCommonMotionProps(animation, setAnimation)
+  const motionScaleProps = getScaleMotionProps(animation, setAnimation)
 
   const currentActivity = 'Portfolio'
 
@@ -23,51 +32,79 @@ const Hero = ({ showBottomSection }) => {
     <section className={stl.section} id="heroSection">
       <div className={stl.main}>
         <div className={stl.left}>
-          <div className={stl.logo}>
+          <motion.div className={stl.logo} {...motionProps}>
             <Image src={Logo} alt="logo" />
-          </div>
-          <h3>
+          </motion.div>
+          <motion.h3
+            {...motionProps}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <span>
               <Image src={BlackLine} alt="black-line" />
             </span>
             <span>User Interface Designer</span>
-          </h3>
-          <p className={stl.secondaryText}>
+          </motion.h3>
+          <motion.p
+            {...motionProps}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className={stl.secondaryText}
+          >
             I’m UI/UX designer in lucknow , and I’m very passionate and
             dedicated to my work.
-          </p>
+          </motion.p>
           {showBottomSection && (
-            <Button onClick={() => router.push('/contact')}>
-              say Hello <SendIcon />
-            </Button>
+            <motion.div
+              {...motionProps}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className={stl.btnWrapper}
+            >
+              <Button onClick={() => router.push('/contact')}>
+                say Hello <SendIcon />
+              </Button>
+            </motion.div>
           )}
         </div>
-        <div className={stl.right}>
+
+        <motion.div {...motionScaleProps} className={stl.right}>
           <Image src={HeroImage} alt="hero-image" priority />
           <div className={stl.statusRow}>
             <span className={stl.yellowBox} />
             Currently working on <span>{currentActivity}</span>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {showBottomSection && (
         <div className={stl.bottomSection}>
-          <div className={stl.upperText}>A Designer who</div>
-          <h3 className={stl.mainText}>
+          <motion.div
+            {...motionProps}
+            transition={{ duration: 0.5, delay: 0.35 }}
+            className={stl.upperText}
+          >
+            A Designer who
+          </motion.div>
+          <motion.h3
+            {...motionProps}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className={stl.mainText}
+          >
             Judges a book by its <span>cover</span>...
-          </h3>
-          <p className={stl.secondaryText}>
+          </motion.h3>
+          <motion.p
+            {...motionProps}
+            transition={{ duration: 0.5, delay: 0.45 }}
+            className={stl.secondaryText}
+          >
             Because if the cover does not impress you what else can?
-          </p>
+          </motion.p>
 
-          <div className={stl.arrowPointingDown}>
+          <motion.div {...motionProps} className={stl.arrowPointingDown}>
             <Image src={ArrowPointingDown} alt="arrow-pointing-down" />
-          </div>
+          </motion.div>
 
-          <div className={stl.miniArtBox}>
+          <motion.div {...motionProps} className={stl.miniArtBox}>
             <Image src={MiniBoxArt} alt="mini-box-art" />
-          </div>
+          </motion.div>
         </div>
       )}
     </section>

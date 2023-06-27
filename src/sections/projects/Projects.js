@@ -1,13 +1,20 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 import PreviewIcon from 'assets/svg/preview.svg'
-
 import HorizontalOrangeLine from 'assets/png/horizontal-orange-line.png'
+
+import { getCommonMotionProps } from 'lib/utils'
 
 import stl from './Projects.module.scss'
 
 const Projects = () => {
+  const [animation, setAnimation] = useState(false)
+
+  const motionProps = getCommonMotionProps(animation, setAnimation)
+
   const projects = [
     {
       thumbnailPath: '/assets/png/projects/real-estate.png',
@@ -40,12 +47,12 @@ const Projects = () => {
   return (
     <section className={stl.section} id="projectsSection">
       <div className={stl.head}>
-        <div className={stl.heading}>
+        <motion.div className={stl.heading} {...motionProps}>
           <h3>
             <span>#</span>Projects
           </h3>
           <Image src={HorizontalOrangeLine} alt="horizontal-orange-line" />
-        </div>
+        </motion.div>
 
         <Link href="https://www.figma.com/@krish4alex">
           <a className={stl.viewAllBtn} target="_blank">
@@ -56,8 +63,13 @@ const Projects = () => {
 
       <div className={stl.projects}>
         {projects.map(
-          ({ thumbnailPath, title, skill, description, projectLink }) => (
-            <div key={title} className={stl.card}>
+          ({ thumbnailPath, title, skill, description, projectLink }, i) => (
+            <motion.div
+              key={i}
+              className={stl.card}
+              {...motionProps}
+              transition={{ duration: 0.5, delay: 0.15 + 0.2 * i }}
+            >
               <div className={stl.imageBox}>
                 <Image
                   src={thumbnailPath}
@@ -82,7 +94,7 @@ const Projects = () => {
                   </a>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           )
         )}
       </div>
