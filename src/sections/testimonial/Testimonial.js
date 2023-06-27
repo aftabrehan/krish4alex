@@ -1,16 +1,21 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 
 import Pagination from 'components/pagination'
-
 import HorizontalOrangeLine from 'assets/png/horizontal-orange-line.png'
+
+import { getCommonMotionProps } from 'lib/utils'
 
 import stl from './Testimonial.module.scss'
 
 const Testimonial = () => {
+  const [animation, setAnimation] = useState(false)
   const [itemsPerPage, setItemsPerPage] = useState(2)
   const [currentPage, setCurrentPage] = useState(1)
+
+  const motionProps = getCommonMotionProps(animation, setAnimation)
 
   const updateItemsPerPage = () => {
     if (window.innerWidth < 848) setItemsPerPage(1)
@@ -79,39 +84,46 @@ const Testimonial = () => {
 
   return (
     <section className={stl.section} id="testimonialSection">
-      <div className={stl.heading}>
+      <motion.div className={stl.heading} {...motionProps}>
         <h3>
           <span>#</span>Testimonial
         </h3>
         <Image src={HorizontalOrangeLine} alt="horizontal-orange-line" />
-      </div>
+      </motion.div>
 
       <div className={stl.content}>
         <div className={clsx(stl.swiper, itemsPerPage === 1 && stl.mobSwipper)}>
-          {getCurrentPageItems().map(({ id, name, title, avatar, content }) => (
-            <div key={id} className={stl.testimonial}>
-              <div className={stl.head}>
-                <div className={stl.avatarBox}>
-                  <Image
-                    src={avatar}
-                    alt={`${name}'s profile picture`}
-                    width={38}
-                    height={38}
-                    style={{ borderRadius: '50%', objectFit: 'fill' }}
-                  />
+          {getCurrentPageItems().map(
+            ({ id, name, title, avatar, content }, i) => (
+              <motion.div
+                key={i}
+                className={stl.testimonial}
+                {...motionProps}
+                transition={{ duration: 0.5, delay: 0.2 + 0.1 * i }}
+              >
+                <div className={stl.head}>
+                  <div className={stl.avatarBox}>
+                    <Image
+                      src={avatar}
+                      alt={`${name}'s profile picture`}
+                      width={38}
+                      height={38}
+                      style={{ borderRadius: '50%', objectFit: 'fill' }}
+                    />
+                  </div>
+                  <div className={stl.info}>
+                    <h4>{title}</h4>
+                    <h5>{name}</h5>
+                  </div>
                 </div>
-                <div className={stl.info}>
-                  <h4>{title}</h4>
-                  <h5>{name}</h5>
-                </div>
-              </div>
 
-              <div className={stl.descriptionBox}>
-                <div className={stl.line} />
-                <p>{content}</p>
-              </div>
-            </div>
-          ))}
+                <div className={stl.descriptionBox}>
+                  <div className={stl.line} />
+                  <p>{content}</p>
+                </div>
+              </motion.div>
+            )
+          )}
         </div>
 
         <Pagination

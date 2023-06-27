@@ -76,6 +76,10 @@
 
   a {
     color: $primaryClr;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

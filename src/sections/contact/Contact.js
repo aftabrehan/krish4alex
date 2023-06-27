@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 
 import Button from 'components/button'
 import Toast from 'components/toast'
@@ -12,15 +13,20 @@ import ArrowDotIcon from 'assets/svg/arrow-dot.svg'
 import SendIcon from 'assets/svg/send.svg'
 import SpinnerIcon from 'assets/svg/spinner.svg'
 
+import { getCommonMotionProps } from 'lib/utils'
+
 import stl from './Contact.module.scss'
 
 const Contact = () => {
+  const [animation, setAnimation] = useState(false)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [showToast, setShowToast] = useState(false)
   const [variant, setVariant] = useState('success')
+
+  const motionProps = getCommonMotionProps(animation, setAnimation)
 
   const otherOptions = [
     {
@@ -73,12 +79,18 @@ const Contact = () => {
   return (
     <section className={stl.container}>
       <div className={stl.left}>
-        <h3>Talk to me on:</h3>
+        <motion.h3 {...motionProps}>Talk to me on:</motion.h3>
 
         <div className={stl.otherOptions}>
           {otherOptions.map(({ icon, label, value, link }, i) => (
             <Link key={i} href={link}>
-              <a className={stl.optionCard} target="_blank">
+              <motion.a
+                key={i}
+                {...motionProps}
+                transition={{ duration: 0.5, delay: 0.2 + 0.1 * i }}
+                className={stl.optionCard}
+                target="_blank"
+              >
                 {icon}
                 <span className={stl.label}>{label}</span>
                 <span className={stl.value}>{value}</span>
@@ -86,20 +98,24 @@ const Contact = () => {
                   with me
                   <ArrowDotIcon />
                 </span>
-              </a>
+              </motion.a>
             </Link>
           ))}
         </div>
       </div>
 
       <div className={stl.right}>
-        <h3>Let&apos;s talk!</h3>
+        <motion.h3 {...motionProps}>Let&apos;s talk!</motion.h3>
 
         <form
           onSubmit={handleSubmit}
           className={clsx(stl.form, isLoading && stl.disabledForm)}
         >
-          <div className={stl.fieldBox}>
+          <motion.div
+            {...motionProps}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className={stl.fieldBox}
+          >
             <input
               placeholder="your name"
               type="text"
@@ -109,9 +125,13 @@ const Contact = () => {
               className={stl.input}
             />
             <p>I could use this to address you.</p>
-          </div>
+          </motion.div>
 
-          <div className={stl.fieldBox}>
+          <motion.div
+            {...motionProps}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className={stl.fieldBox}
+          >
             <input
               placeholder="your email"
               type="email"
@@ -124,9 +144,13 @@ const Contact = () => {
             <p>
               Your email is safe with me. I&apos;ll never share it with anyone.
             </p>
-          </div>
+          </motion.div>
 
-          <div className={stl.fieldBox}>
+          <motion.div
+            {...motionProps}
+            transition={{ duration: 0.5, delay: 0.35 }}
+            className={stl.fieldBox}
+          >
             <textarea
               placeholder="your message"
               name={message}
@@ -135,7 +159,7 @@ const Contact = () => {
               className={stl.textarea}
             />
             <p>Your message matters. Make it short and impactful!</p>
-          </div>
+          </motion.div>
 
           <Button customClass={stl.submitBtn}>
             Send Message {isLoading ? <SpinnerIcon /> : <SendIcon />}

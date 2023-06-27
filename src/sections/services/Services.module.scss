@@ -51,6 +51,7 @@
   border-radius: 24px;
   transition: translate 0.25s ease-in-out, box-shadow 0.25s ease-in-out,
     border-color 0.25s ease-in-out;
+  cursor: pointer;
 
   svg path {
     transition: fill 0.25s ease-in-out;

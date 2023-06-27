@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 import WebDesignIcon from 'assets/svg/web-design.svg'
 import CodeIcon from 'assets/svg/code.svg'
@@ -8,11 +10,17 @@ import ArrowDotIcon from 'assets/svg/arrow-dot.svg'
 
 import HorizontalOrangeLine from 'assets/png/horizontal-orange-line.png'
 
+import { getCommonMotionProps } from 'lib/utils'
+
 import { scrollToSection } from 'lib/utils'
 
 import stl from './Services.module.scss'
 
 const Services = () => {
+  const [animation, setAnimation] = useState(false)
+
+  const motionProps = getCommonMotionProps(animation, setAnimation)
+
   const services = [
     {
       icon: <WebDesignIcon />,
@@ -36,17 +44,22 @@ const Services = () => {
 
   return (
     <section className={stl.section} id="servicesSection">
-      <div className={stl.heading}>
+      <motion.div className={stl.heading} {...motionProps}>
         <h3>
           <span>#</span>Services
         </h3>
         <Image src={HorizontalOrangeLine} alt="horizontal-orange-line" />
-      </div>
+      </motion.div>
 
       <div className={stl.services}>
         {services.map(({ icon, label, link, id }, i) => (
           <Link key={i} href={link}>
-            <a onClick={() => scrollToSection(id)} className={stl.serviceCard}>
+            <motion.a
+              className={stl.serviceCard}
+              onClick={() => scrollToSection(id)}
+              {...motionProps}
+              transition={{ duration: 0.35, delay: 0.15 + 0.2 * i }}
+            >
               {icon}
               <div className={stl.label}>
                 <span>{label}</span>
@@ -56,7 +69,7 @@ const Services = () => {
                 Learn More
                 <ArrowDotIcon />
               </span>
-            </a>
+            </motion.a>
           </Link>
         ))}
       </div>

@@ -1,13 +1,22 @@
+import { useState } from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 import HorizontalOrangeLine from 'assets/png/horizontal-orange-line.png'
 import SkillsArt from 'assets/png/skills-art.png'
 import DotsArt from 'assets/png/dots-art.png'
 import MiniBoxArt from 'assets/png/mini-box-art.png'
 
+import { getCommonMotionProps, getScaleMotionProps } from 'lib/utils'
+
 import stl from './Skills.module.scss'
 
 const Skills = () => {
+  const [animation, setAnimation] = useState(false)
+
+  const motionProps = getCommonMotionProps(animation, setAnimation)
+  const motionScaleProps = getScaleMotionProps(animation, setAnimation)
+
   const skillsList = [
     {
       heading: 'Languages',
@@ -29,21 +38,26 @@ const Skills = () => {
 
   return (
     <section className={stl.section} id="skillsSection">
-      <div className={stl.heading}>
+      <motion.div className={stl.heading} {...motionProps}>
         <h3>
           <span>#</span>Skills
         </h3>
         <Image src={HorizontalOrangeLine} alt="horizontal-orange-line" />
-      </div>
+      </motion.div>
 
       <div className={stl.content}>
-        <div className={stl.left}>
+        <motion.div className={stl.left} {...motionScaleProps}>
           <Image src={SkillsArt} alt="skills-art" />
-        </div>
+        </motion.div>
 
         <div className={stl.right}>
           {skillsList.map(({ heading, skills }, i) => (
-            <div key={i} className={stl.table}>
+            <motion.div
+              key={i}
+              {...motionProps}
+              transition={{ duration: 0.5, delay: 0.2 + 0.1 * i }}
+              className={stl.table}
+            >
               <div className={stl.head}>{heading}</div>
 
               <div className={stl.divider} />
@@ -55,7 +69,7 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
 
           <div className={stl.dotsArt}>

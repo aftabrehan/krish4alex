@@ -1,13 +1,21 @@
+import { useState } from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 import KrishLogo from 'assets/svg/krish.svg'
 import GithubIcon from 'assets/svg/github.svg'
 import DribbbleIcon from 'assets/svg/dribbble.svg'
 import FigmaIcon from 'assets/svg/figma.svg'
 
+import { getCommonMotionProps } from 'lib/utils'
+
 import stl from './Footer.module.scss'
 
 const Footer = () => {
+  const [animation, setAnimation] = useState(false)
+
+  const motionProps = getCommonMotionProps(animation, setAnimation)
+
   const year = new Date().getFullYear()
 
   const profileLinks = [
@@ -28,7 +36,7 @@ const Footer = () => {
   return (
     <footer className={stl.footer}>
       <div className={stl.main}>
-        <div className={stl.content}>
+        <motion.div className={stl.content} {...motionProps}>
           <div className={stl.about}>
             <h6>
               <KrishLogo />
@@ -49,9 +57,13 @@ const Footer = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className={stl.copyRight}>
+        <motion.div
+          className={stl.copyRight}
+          {...motionProps}
+          transition={{ duration: 0.5, delay: 0.25 }}
+        >
           © Copyright {year}. Designed by{' '}
           <Link href="http://krish4alex.vercel.app">krish4alex</Link> and
           Developed by{' '}
@@ -59,7 +71,7 @@ const Footer = () => {
             <a target="_blank">Aftab Rehan</a>
           </Link>
           .
-        </div>
+        </motion.div>
       </div>
     </footer>
   )
