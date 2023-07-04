@@ -84,21 +84,21 @@ const Contact = () => {
         <div className={stl.otherOptions}>
           {otherOptions.map(({ icon, label, value, link }, i) => (
             <Link key={i} href={link}>
-              <motion.a
-                key={i}
-                {...motionProps}
-                transition={{ duration: 0.5, delay: 0.2 + 0.1 * i }}
-                className={stl.optionCard}
-                target="_blank"
-              >
-                {icon}
-                <span className={stl.label}>{label}</span>
-                <span className={stl.value}>{value}</span>
-                <span className={stl.btn}>
-                  with me
-                  <ArrowDotIcon />
-                </span>
-              </motion.a>
+              <a target="_blank">
+                <motion.div
+                  {...motionProps}
+                  transition={{ duration: 0.5, delay: 0.2 + 0.1 * i }}
+                  className={stl.optionCard}
+                >
+                  {icon}
+                  <span className={stl.label}>{label}</span>
+                  <span className={stl.value}>{value}</span>
+                  <span className={stl.btn}>
+                    with me
+                    <ArrowDotIcon />
+                  </span>
+                </motion.div>
+              </a>
             </Link>
           ))}
         </div>
