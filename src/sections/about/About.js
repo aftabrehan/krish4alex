@@ -130,10 +130,7 @@ const About = () => {
               <PageIcon />
             </Button>
 
-            <Button
-              onClick={() => router.push('/about-me')}
-              variant="secondary"
-            >
+            <Button onClick={() => router.push('/about')} variant="secondary">
               Read More
               <ForwardIcon />
             </Button>

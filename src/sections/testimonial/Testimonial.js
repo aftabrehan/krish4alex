@@ -92,39 +92,36 @@ const Testimonial = () => {
       </motion.div>
 
       <div className={stl.content}>
-        <div className={clsx(stl.swiper, itemsPerPage === 1 && stl.mobSwipper)}>
-          {getCurrentPageItems().map(
-            ({ id, name, title, avatar, content }, i) => (
-              <motion.div
-                key={i}
-                className={stl.testimonial}
-                {...motionProps}
-                transition={{ duration: 0.5, delay: 0.2 + 0.1 * i }}
-              >
-                <div className={stl.head}>
-                  <div className={stl.avatarBox}>
-                    <Image
-                      src={avatar}
-                      alt={`${name}'s profile picture`}
-                      width={38}
-                      height={38}
-                      style={{ borderRadius: '50%', objectFit: 'fill' }}
-                    />
-                  </div>
-                  <div className={stl.info}>
-                    <h4>{title}</h4>
-                    <h5>{name}</h5>
-                  </div>
+        <motion.div
+          {...motionProps}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className={clsx(stl.swiper, itemsPerPage === 1 && stl.mobSwipper)}
+        >
+          {getCurrentPageItems().map(({ name, title, avatar, content }, i) => (
+            <div key={i} className={stl.testimonial}>
+              <div className={stl.head}>
+                <div className={stl.avatarBox}>
+                  <Image
+                    src={avatar}
+                    alt={`${name}'s profile picture`}
+                    width={38}
+                    height={38}
+                    style={{ borderRadius: '50%', objectFit: 'fill' }}
+                  />
                 </div>
+                <div className={stl.info}>
+                  <h4>{title}</h4>
+                  <h5>{name}</h5>
+                </div>
+              </div>
 
-                <div className={stl.descriptionBox}>
-                  <div className={stl.line} />
-                  <p>{content}</p>
-                </div>
-              </motion.div>
-            )
-          )}
-        </div>
+              <div className={stl.descriptionBox}>
+                <div className={stl.line} />
+                <p>{content}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
 
         <Pagination
           totalItems={testimonials.length}

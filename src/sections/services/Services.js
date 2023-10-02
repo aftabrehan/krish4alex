@@ -12,8 +12,6 @@ import HorizontalOrangeLine from 'assets/png/horizontal-orange-line.png'
 
 import { getCommonMotionProps } from 'lib/utils'
 
-import { scrollToSection } from 'lib/utils'
-
 import stl from './Services.module.scss'
 
 const Services = () => {
@@ -25,20 +23,17 @@ const Services = () => {
     {
       icon: <WebDesignIcon />,
       label: 'Web',
-      link: '#skills',
-      id: 'skillsSection',
+      link: '/services?type=Web',
     },
     {
       icon: <CodeIcon />,
-      label: 'UI/Ux',
-      link: '#skills',
-      id: 'skillsSection',
+      label: 'UI/UX',
+      link: '/services?type=UI/UX',
     },
     {
       icon: <BrandDesignIcon />,
       label: 'Brand',
-      link: '#skills',
-      id: 'skillsSection',
+      link: '/services?type=Brand',
     },
   ]
 
@@ -52,13 +47,12 @@ const Services = () => {
       </motion.div>
 
       <div className={stl.services}>
-        {services.map(({ icon, label, link, id }, i) => (
-          <Link key={i} href={link}>
+        {services.map(({ icon, label, link }, i) => (
+          <Link key={i} href={link} passHref>
             <motion.a
-              className={stl.serviceCard}
-              onClick={() => scrollToSection(id)}
               {...motionProps}
               transition={{ duration: 0.35, delay: 0.15 + 0.2 * i }}
+              className={stl.serviceCard}
             >
               {icon}
               <div className={stl.label}>

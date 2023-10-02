@@ -1,0 +1,109 @@
+@import 'styles/common';
+
+.main {
+  @extend .flexCol;
+  width: 100%;
+  max-width: 1130px;
+  height: 100%;
+  gap: 6rem;
+  margin: 2rem auto;
+}
+
+.heroSection {
+  @extend .spaceBetween;
+  width: 100%;
+  gap: 2rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.textBox {
+  @extend .flexCol;
+  width: 75%;
+  padding-left: 4rem;
+
+  h1 {
+    font-family: 'DM Sans';
+    margin: 0;
+    font-size: 48px;
+    font-weight: 400;
+    color: $midnightBlue;
+
+    span {
+      color: $primaryClr;
+    }
+  }
+
+  h2 {
+    font-family: 'DM Sans';
+    margin: 0;
+    font-size: 48px;
+    font-weight: 400;
+    color: $midnightBlue;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  p {
+    max-width: 380px;
+    margin-top: 1rem;
+    font-family: 'Preahvihear';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: $midnightBlue2;
+  }
+}
+
+.imageBox {
+  @extend .flexCenter;
+}
+
+.linesArt {
+  position: absolute;
+  left: -35%;
+}
+
+@media (max-width: 960px) {
+  .heroSection {
+    flex-direction: column;
+  }
+
+  .textBox {
+    width: 100%;
+    align-items: center;
+
+    h1,
+    h2,
+    p {
+      text-align: center;
+    }
+  }
+
+  .linesArt {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .textBox {
+    padding-left: 2.5rem;
+
+    h1,
+    h2 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .imageBox {
+    width: 100%;
+    max-width: 400px;
+  }
+}

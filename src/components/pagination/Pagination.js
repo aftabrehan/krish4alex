@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
+
+import { getCommonMotionProps } from 'lib/utils'
 
 import stl from './Pagination.module.scss'
 
@@ -9,8 +12,10 @@ const Pagination = ({
   currentPage,
   onPageChange,
 }) => {
+  const [animation, setAnimation] = useState(false)
   const [pages, setPages] = useState([])
 
+  const motionProps = getCommonMotionProps(animation, setAnimation)
   const totalPages = Math.ceil(totalItems / itemsPerPage)
 
   const generatePages = () => {
@@ -30,7 +35,7 @@ const Pagination = ({
   }, [itemsPerPage])
 
   return (
-    <ul className={stl.pagination}>
+    <motion.ul {...motionProps} className={stl.pagination}>
       {pages.map(page => (
         <li
           key={page}
@@ -40,7 +45,7 @@ const Pagination = ({
           {page === currentPage ? '●' : '○'}
         </li>
       ))}
-    </ul>
+    </motion.ul>
   )
 }
 
