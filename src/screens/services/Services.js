@@ -6,12 +6,21 @@ import Layout from 'layout'
 import LinesArt from 'assets/svg/lines.svg'
 
 import avatar from 'assets/png/services-avatar.png'
+import webDesignTech from 'assets/png/web-design-tech-art.png'
+import uiuxDesignTech from 'assets/png/uiux-design-tech-art.png'
+import brandDesignTech from 'assets/png/brand-design-tech-art.png'
 
 import stl from './Services.module.scss'
 
 const Services = () => {
   const router = useRouter()
   const { type } = router.query
+
+  const techImage = {
+    web: webDesignTech,
+    'ui/ux': uiuxDesignTech,
+    brand: brandDesignTech,
+  }[type?.toLowerCase()]
 
   return (
     <Layout>
@@ -33,11 +42,18 @@ const Services = () => {
           </div>
 
           <div className={stl.imageBox}>
-            <Image src={avatar} alt="text" />
+            <Image src={avatar} alt="avatar" />
           </div>
         </section>
 
-        <section className={stl.aboutSection}></section>
+        <section className={stl.showcase}>
+          <div className={stl.imageBox}>
+            <Image src={techImage} alt="tech-image" />
+          </div>
+          <div className={stl.textContainer}>
+            <h2>I specialize in</h2>
+          </div>
+        </section>
       </main>
     </Layout>
   )

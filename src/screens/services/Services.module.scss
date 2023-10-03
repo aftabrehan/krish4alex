@@ -49,7 +49,7 @@
   p {
     max-width: 380px;
     margin-top: 1rem;
-    font-family: 'Preahvihear';
+    font-family: '                                           ';
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -65,6 +65,22 @@
 .linesArt {
   position: absolute;
   left: -35%;
+}
+
+.showcase {
+  @extend .spaceBetween;
+  width: 100%;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.textContainer {
+  h2 {
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 57.6px;
+    color: $midnightBlue;
+  }
 }
 
 @media (max-width: 960px) {
