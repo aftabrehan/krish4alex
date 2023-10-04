@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import Layout from 'layout'
+import SkillCard from 'components/skill-card'
 
 import LinesArt from 'assets/svg/lines.svg'
 
@@ -16,11 +17,73 @@ const Services = () => {
   const router = useRouter()
   const { type } = router.query
 
-  const techImage = {
-    web: webDesignTech,
-    'ui/ux': uiuxDesignTech,
-    brand: brandDesignTech,
-  }[type?.toLowerCase()]
+  const techImage =
+    {
+      web: webDesignTech,
+      'ui/ux': uiuxDesignTech,
+      brand: brandDesignTech,
+    }[type?.toLowerCase()] || uiuxDesignTech
+
+  const webSkills = [
+    {
+      title: 'React',
+      description:
+        'I also use Client First system for class naming structure, which allows me to build any project fast and conveniently.',
+    },
+    {
+      title: 'JavaScript',
+      description:
+        'I also use Client First system for class naming structure, which allows me to build any project fast and conveniently.',
+    },
+    {
+      title: 'HTML, CSS',
+      description:
+        'I also use Client First system for class naming structure, which allows me to build any project fast and conveniently.',
+    },
+  ]
+
+  const uiuxSkills = [
+    {
+      title: 'Figma',
+      description:
+        'I also use Client First system for class naming structure, which allows me to build any project fast and conveniently.',
+    },
+    {
+      title: 'Adobe XD',
+      description:
+        'I also use Client First system for class naming structure, which allows me to build any project fast and conveniently.',
+    },
+    {
+      title: 'Sketch',
+      description:
+        'I also use Client First system for class naming structure, which allows me to build any project fast and conveniently.',
+    },
+  ]
+
+  const brandSkills = [
+    {
+      title: 'Adobe Illustrator',
+      description:
+        'I also use Client First system for class naming structure, which allows me to build any project fast and conveniently.',
+    },
+    {
+      title: 'Adobe Photoshop',
+      description:
+        'I also use Client First system for class naming structure, which allows me to build any project fast and conveniently.',
+    },
+    {
+      title: 'Blender',
+      description:
+        'I also use Client First system for class naming structure, which allows me to build any project fast and conveniently.',
+    },
+  ]
+
+  const skills =
+    {
+      web: webSkills,
+      'ui/ux': uiuxSkills,
+      brand: brandSkills,
+    }[type?.toLowerCase()] || []
 
   return (
     <Layout>
@@ -42,16 +105,22 @@ const Services = () => {
           </div>
 
           <div className={stl.imageBox}>
-            <Image src={avatar} alt="avatar" />
+            <Image src={avatar} alt="avatar" width={800} />
           </div>
         </section>
 
-        <section className={stl.showcase}>
+        <section className={stl.showcaseSection}>
           <div className={stl.imageBox}>
             <Image src={techImage} alt="tech-image" />
           </div>
           <div className={stl.textContainer}>
             <h2>I specialize in</h2>
+
+            <div className={stl.skillsWrapper}>
+              {skills.map((skill, i) => (
+                <SkillCard key={i} {...skill} index={i + 1} />
+              ))}
+            </div>
           </div>
         </section>
       </main>

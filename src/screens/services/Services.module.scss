@@ -23,7 +23,7 @@
   padding-left: 4rem;
 
   h1 {
-    font-family: 'DM Sans';
+    font-family: 'DM Sans' sans-serif;
     margin: 0;
     font-size: 48px;
     font-weight: 400;
@@ -35,7 +35,7 @@
   }
 
   h2 {
-    font-family: 'DM Sans';
+    font-family: 'DM Sans' sans-serif;
     margin: 0;
     font-size: 48px;
     font-weight: 400;
@@ -49,7 +49,7 @@
   p {
     max-width: 380px;
     margin-top: 1rem;
-    font-family: '                                           ';
+    font-family: 'DM Sans' sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -67,7 +67,7 @@
   left: -35%;
 }
 
-.showcase {
+.showcaseSection {
   @extend .spaceBetween;
   width: 100%;
   gap: 2rem;
@@ -75,6 +75,9 @@
 }
 
 .textContainer {
+  @extend .flexCenterCol;
+  gap: 1rem;
+
   h2 {
     font-size: 42px;
     font-weight: 400;
@@ -83,8 +86,18 @@
   }
 }
 
+.skillsWrapper {
+  @extend .flexCenterCol;
+  gap: 2rem;
+}
+
 @media (max-width: 960px) {
-  .heroSection {
+  .main {
+    gap: 2rem;
+  }
+
+  .heroSection,
+  .showcaseSection {
     flex-direction: column;
   }
 
@@ -101,6 +114,18 @@
 
   .linesArt {
     display: none;
+  }
+
+  .imageBox {
+    order: 1;
+  }
+
+  .textContainer {
+    order: 0;
+  }
+
+  .skillsWrapper {
+    gap: 1rem;
   }
 }
 
