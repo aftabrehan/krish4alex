@@ -118,22 +118,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className={stl.btnWrapper}
           >
-            <Button
-              onClick={() =>
-                window.open(
-                  'https://drive.google.com/file/d/1hHyN_GqHYQxoMq_MppTH9ceUw-z9ftJq/view?usp=drive_link',
-                  '_blank'
-                )
-              }
-            >
-              Download CV
-              <PageIcon />
-            </Button>
-
-            <Button
-              onClick={() => router.push('/about-me')}
-              variant="secondary"
-            >
+            <Button onClick={() => router.push('/about')} variant="secondary">
               Read More
               <ForwardIcon />
             </Button>

@@ -1,6 +1,7 @@
 import Home from './home'
-import AboutMe from './about-me'
+import About from './about'
 import ContactSection from './contact'
+import Services from './services'
 
-export { AboutMe, ContactSection as Contact }
+export { About, ContactSection as Contact, Services }
 export default Home

@@ -35,7 +35,7 @@ const Header = ({ customClass }) => {
 
   const navLinks = [
     { label: 'Home', href: '/#home', id: 'heroSection' },
-    { label: 'About', href: '/about-me', id: 'aboutPage' },
+    { label: 'About', href: '/about', id: 'aboutPage' },
     { label: 'Services', href: '/#services', id: 'servicesSection' },
     { label: 'Skills', href: '/#skills', id: 'skillsSection' },
     { label: 'Contact', href: '/contact', id: 'contactSection' },

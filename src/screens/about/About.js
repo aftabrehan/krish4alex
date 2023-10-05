@@ -14,9 +14,9 @@ import ArrowDown from 'assets/png/arrow-down.png'
 
 import { getCommonMotionProps, getScaleMotionProps } from 'lib/utils'
 
-import stl from './AboutMe.module.scss'
+import stl from './About.module.scss'
 
-const AboutMe = () => {
+const About = () => {
   const [animation, setAnimation] = useState(false)
 
   const router = useRouter()
@@ -92,7 +92,7 @@ const AboutMe = () => {
           </div>
         </section>
 
-        <section className={stl.aboutMeSection}>
+        <section className={stl.aboutSection}>
           <motion.h3
             {...motionProps}
             transition={{ duration: 0.5, delay: 0.45 }}
@@ -137,4 +137,4 @@ const AboutMe = () => {
   )
 }
 
-export default AboutMe
+export default About
