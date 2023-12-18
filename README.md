@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Designer's Portfolio
 
-## Getting Started
+This is a designer's portfolio project created with custom design. It features various portfolio items and utilizes modern technologies like React JS, Next.js, JavaScript, SendGrid, and Framer motion. The website includes easy navigation, an about page, services page, contact page, and a home page with sections for portfolio, skills, and testimonials. It is designed to be fully responsive and has been tested on iPads and phones. Additionally, it has a contact message feature that utilizes SendGrid's Email API, making it convenient for quick collaborations.
 
-First, run the development server:
+| [View Project 🔥](https://aftabrehan.com/portfolio/designer-portfolio) | [Live Preview 🚀](https://krish4alex.vercel.app) |
+| ---------------------------------------------------------------------- | ------------------------------------------------ |
 
-```bash
-npm run dev
-# or
-yarn dev
+### Preview
+
+<div>
+  <a href="https://aftabrehan.com/portfolio/designer-portfolio">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/47092178d2cd43ffbac0a89f387f1e6c-with-play.gif">
+  </a>
+</div>
+
+|                                                                                                       The                                                                                                       |                                                                                                     Project                                                                                                     |                                                                                                      Shots                                                                                                      |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <div><a href="https://aftabrehan.com/portfolio/designer-portfolio"><img style="max-width:220px;" src="https://aftabrehan.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F1.847d8c2b.png&w=1920&q=75"></a></div> | <div><a href="https://aftabrehan.com/portfolio/designer-portfolio"><img style="max-width:220px;" src="https://aftabrehan.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F2.ec4ae129.png&w=1920&q=75"></a></div> | <div><a href="https://aftabrehan.com/portfolio/designer-portfolio"><img style="max-width:220px;" src="https://aftabrehan.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F3.04c29675.png&w=1920&q=75"></a></div> |
+| <div><a href="https://aftabrehan.com/portfolio/designer-portfolio"><img style="max-width:220px;" src="https://aftabrehan.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F4.d6b7e1ba.png&w=1920&q=75"></a></div> | <div><a href="https://aftabrehan.com/portfolio/designer-portfolio"><img style="max-width:220px;" src="https://aftabrehan.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F5.1a8bca17.png&w=1920&q=75"></a></div> | <div><a href="https://aftabrehan.com/portfolio/designer-portfolio"><img style="max-width:220px;" src="https://aftabrehan.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F6.34f9a685.png&w=1920&q=75"></a></div> |
+
+<hr />
+
+### Getting Started
+
+1. Clone the repository.
+
+```
+git clone https://github.com/aftabrehan/krish4alex
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install the required dependencies.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+yarn
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+3. Start the development server.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+yarn dev
+```
