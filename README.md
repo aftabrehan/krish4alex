@@ -25,7 +25,7 @@ This is a designer's portfolio project created with custom design. It features v
 1. Clone the repository.
 
 ```
-git clone https://github.com/aftabrehan/krish4alex
+git clone https://github.com/aftabrehan/krish4alex.git
 ```
 
 2. Install the required dependencies.
