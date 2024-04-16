@@ -49,7 +49,7 @@ const Hero = ({ showBottomSection }) => {
             transition={{ duration: 0.5, delay: 0.25 }}
             className={stl.secondaryText}
           >
-            I’m UI/UX designer in lucknow , and I’m very passionate and
+            I’m UI/UX designer, and I’m very passionate and
             dedicated to my work.
           </motion.p>
           {showBottomSection && (

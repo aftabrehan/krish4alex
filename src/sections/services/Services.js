@@ -57,7 +57,7 @@ const Services = () => {
               {icon}
               <div className={stl.label}>
                 <span>{label}</span>
-                <span>Designer</span>
+                <span>Design</span>
               </div>
               <span className={stl.link}>
                 Learn More

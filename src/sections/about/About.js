@@ -32,12 +32,12 @@ const About = () => {
     {
       icon: <MedalIcon />,
       title: 'Experience',
-      subTitle: '1+ years',
+      subTitle: '3+ years',
     },
     {
       icon: <CloudDoneIcon />,
       title: 'Completed',
-      subTitle: '10+ projects',
+      subTitle: '19+ projects',
     },
     {
       icon: <HeadPhoneIcon />,

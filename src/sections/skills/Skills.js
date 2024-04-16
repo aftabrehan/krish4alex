@@ -20,7 +20,7 @@ const Skills = () => {
   const skillsList = [
     {
       heading: 'Languages',
-      skills: ['TypeScript', 'Lua', 'Python', 'JavaScript'],
+      skills: ['Python', 'JavaScript'],
     },
     {
       heading: 'Databases',
@@ -28,11 +28,11 @@ const Skills = () => {
     },
     {
       heading: 'Tools',
-      skills: ['Photoshop', 'Skate', 'Sketch', 'Figma', 'XD', 'Illustration'],
+      skills: ['Photoshop', 'Sketch', 'Figma', 'XD', 'Illustration', 'Framer', 'Spline'],
     },
     {
       heading: 'Other',
-      skills: ['HTML', 'CSS', 'EJS'],
+      skills: ['HTML', 'CSS'],
     },
   ]
 

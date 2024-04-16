@@ -14,7 +14,7 @@ const Document = () => (
         rel="stylesheet"
       />
 
-      <meta name="description" content="I'm a Graphic Designer (Ui/UX)!" />
+      <meta name="description" content="I'm a UI/UX Designer (Researcher)" />
 
       <meta name="author" content="Krishna Sharma" />
       <meta
@@ -28,7 +28,7 @@ const Document = () => (
       />
       <meta
         property="og:description"
-        content="I'm a Graphic Designer (Ui/UX)!"
+        content="I'm a UI/UX Designer (Researcher)"
       />
       <meta
         property="og:image"
@@ -41,7 +41,7 @@ const Document = () => (
       />
       <meta
         property="twitter:description"
-        content="I'm a Graphic Designer (Ui/UX)!"
+        content="I'm a UI/UX Designer (Researcher)"
       />
       <meta
         property="twitter:image"

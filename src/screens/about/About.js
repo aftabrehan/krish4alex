@@ -81,7 +81,7 @@ const About = () => {
               {...motionProps}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              I&apos;m a Graphic Designer (Ui/UX)!
+              I&apos;m a UI/UX Designer (Researcher)
             </motion.h3>
             <motion.h4
               {...motionProps}
