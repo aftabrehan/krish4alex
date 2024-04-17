@@ -105,7 +105,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.45 }}
             className={stl.about}
           >
-            <h4>Hello, I&apos;m Krish4alex!</h4>
+            <h4>Hello, I&apos;m Krishna Sharma </h4>
             <p>
               A self-taught UI/UX designer, functioning in the industry for 1+
               years now. I make meaningful and delightful digital products that
