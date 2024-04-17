@@ -64,7 +64,7 @@ const About = () => {
             <span className={stl.greenBox} />
             <p>
               Hi, I’m Krishna Sharma (UI/UX Designer) functioning in the
-              industry for 1+ years now. I make meaningful and delightful
+              industry for 3+ years now. I make meaningful and delightful
               digital products that create a equilibrium between user needs and
               business goals.
             </p>
@@ -107,7 +107,7 @@ const About = () => {
           >
             <h4>Hello, I&apos;m Krishna Sharma </h4>
             <p>
-              A self-taught UI/UX designer, functioning in the industry for 1+
+              A self-taught UI/UX designer, functioning in the industry for 3+
               years now. I make meaningful and delightful digital products that
               create a equilibrium between user needs and business goals.
             </p>
