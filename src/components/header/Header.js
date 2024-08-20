@@ -4,7 +4,7 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 
-import Logo from 'assets/svg/logo.svg'
+import Logo from "../../../public/technology/krish2.svg"
 import AppsIcon from 'assets/svg/apps.svg'
 
 import { scrollToSection } from 'lib/utils'
@@ -67,7 +67,7 @@ const Header = ({ customClass }) => {
       <div className={stl.innerHeader}>
         <Link href="/">
           <a className={stl.logo}>
-            <Logo />
+            <Logo  />
           </a>
         </Link>
 

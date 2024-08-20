@@ -17,6 +17,7 @@ import ArrowPointingDown from 'assets/png/arrow-pointing-down.png'
 import { getCommonMotionProps, getScaleMotionProps } from 'lib/utils'
 
 import stl from './Hero.module.scss'
+import TechnologyStackNew from 'components/TechnologyStack/Technology'
 
 const Hero = ({ showBottomSection }) => {
   const [animation, setAnimation] = useState(false)
@@ -32,26 +33,50 @@ const Hero = ({ showBottomSection }) => {
     <section className={stl.section} id="heroSection">
       <div className={stl.main}>
         <div className={stl.left}>
-          <motion.div className={stl.logo} {...motionProps}>
-            <Image src={Logo} alt="logo" />
+          <motion.div {...motionProps}>
+            {/* <Image src={Logo} alt="logo" /> */}
+            <p>hi!👋</p>
+            <h2>I’m <span>Krishna</span> Sharma,</h2>
+            <span>
+              <Image src={BlackLine} alt="black-line" />
+            </span>
+            <h4>UI/UX Designer</h4>
+            <div className={stl.row_about}>
+              <div>
+                <ul>
+                  <li>
+                    <img src="/technology/map-icon.svg" />
+                  </li>
+                  <li>Lucknow</li>
+                </ul>
+              </div>
+              <div>
+                <ul>
+                  <li>
+                    <img src="/technology/email-icon.svg" />
+                  </li>
+                  <li>amitsharma4a3@gmail.com</li>
+                </ul>
+              </div>
+            </div>
+            <div className={stl.about_social}>
+              <ul>
+                <li id={stl.webs}><img src="/technology/website.svg"/>uix.krish</li>
+                <li id={stl.linkdin}><img src="/technology/linkdin.svg"/>/uix.krish</li>
+                <li id={stl.figma}><img src="/technology/figmaIcon.svg"/>/@uix.krish</li>
+                <li id={stl.github}><img src="/technology/github.svg"/>/uix.krish</li>
+              </ul>
+            </div>
           </motion.div>
+
           <motion.h3
             {...motionProps}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <span>
-              <Image src={BlackLine} alt="black-line" />
-            </span>
-            <span>User Interface Designer</span>
+           
+            {/* <span>User Interface Designer</span> */}
           </motion.h3>
-          <motion.p
-            {...motionProps}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className={stl.secondaryText}
-          >
-            I’m UI/UX designer, and I’m very passionate and
-            dedicated to my work.
-          </motion.p>
+          
           {showBottomSection && (
             <motion.div
               {...motionProps}
@@ -73,7 +98,9 @@ const Hero = ({ showBottomSection }) => {
           </div>
         </motion.div>
       </div>
-
+      <div>
+        <TechnologyStackNew />
+      </div>
       {showBottomSection && (
         <div className={stl.bottomSection}>
           <motion.div
@@ -98,9 +125,9 @@ const Hero = ({ showBottomSection }) => {
             Because if the cover does not impress you what else can?
           </motion.p>
 
-          <motion.div {...motionProps} className={stl.arrowPointingDown}>
+          {/* <motion.div {...motionProps} className={stl.arrowPointingDown}>
             <Image src={ArrowPointingDown} alt="arrow-pointing-down" />
-          </motion.div>
+          </motion.div> */}
 
           <motion.div {...motionProps} className={stl.miniArtBox}>
             <Image src={MiniBoxArt} alt="mini-box-art" />

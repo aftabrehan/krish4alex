@@ -1,0 +1,79 @@
+$carousel-width: 150px; // Adjust as needed
+$num-items: 7; // Update this to match the doubled array length
+$ani-offset: calc($carousel-width * $num-items * -1);
+$ani-speed: 10s;
+
+.main_wrapper {
+  margin: 40px 0px 50px 0px;
+}
+
+.carousel_wrapper {
+  --width: #{$carousel-width};
+  --num-items: #{$num-items};
+  --ani-offset: #{$ani-offset};
+  --ani-speed: #{$ani-speed};
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+  }
+
+  &::before {
+    left: 0;
+    width: 4rem;
+    background: linear-gradient(to right, rgba(255, 255, 255) 0%, transparent 50%);
+  }
+
+  &::after {
+    right: 0;
+    width: 4rem;
+    background: linear-gradient(to left, rgba(255, 255, 255) 0%, transparent 50%);
+  }
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  animation: slide var(--ani-speed) linear infinite;
+}
+
+.item {
+  flex: 1 0 var(--width);
+  text-align: center;
+  padding: 2rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Maintain aspect ratio
+  }
+}
+
+@keyframes slide {
+  100% {
+    transform: translateX(var(--ani-offset));
+  }
+}
+
+.title {
+  font-family: Nunito;
+  font-size: 16.37px;
+  font-weight: 400;
+  line-height: 28.32px;
+  text-align: center;
+  color: #667085;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .main_wrapper {
+    margin-top: 4rem;
+  }
+}
