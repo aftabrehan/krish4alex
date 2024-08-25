@@ -10,14 +10,12 @@ import SendIcon from 'assets/svg/send.svg'
 
 import BlackLine from 'assets/png/black-line.png'
 import HeroImage from 'assets/png/hero.png'
-import Logo from 'assets/png/logo.png'
 import MiniBoxArt from 'assets/png/mini-box-art.png'
-import ArrowPointingDown from 'assets/png/arrow-pointing-down.png'
+import TechnologyStack from 'components/technology-stack/Technology'
 
 import { getCommonMotionProps, getScaleMotionProps } from 'lib/utils'
 
 import stl from './Hero.module.scss'
-import TechnologyStackNew from 'components/TechnologyStack/Technology'
 
 const Hero = ({ showBottomSection }) => {
   const [animation, setAnimation] = useState(false)
@@ -34,49 +32,77 @@ const Hero = ({ showBottomSection }) => {
       <div className={stl.main}>
         <div className={stl.left}>
           <motion.div {...motionProps}>
-            {/* <Image src={Logo} alt="logo" /> */}
             <p>hi!👋</p>
-            <h2>I’m <span>Krishna</span> Sharma,</h2>
+            <h2>
+              I&apos;m <span>Krishna</span> Sharma,
+            </h2>
             <span>
               <Image src={BlackLine} alt="black-line" />
             </span>
+
             <h4>UI/UX Designer</h4>
-            <div className={stl.row_about}>
+
+            <div className={stl.rowAbout}>
               <div>
-                <ul>
-                  <li>
-                    <img src="/technology/map-icon.svg" />
-                  </li>
-                  <li>Lucknow</li>
-                </ul>
+                <Image
+                  alt="Map Icon"
+                  src="/technology/map-icon.svg"
+                  width={16}
+                  height={16}
+                />
+                <span>Lucknow</span>
               </div>
               <div>
-                <ul>
-                  <li>
-                    <img src="/technology/email-icon.svg" />
-                  </li>
-                  <li>amitsharma4a3@gmail.com</li>
-                </ul>
+                <Image
+                  alt="Email Icon"
+                  src="/technology/email-icon.svg"
+                  width={16}
+                  height={16}
+                />
+                <span>amitsharma4a3@gmail.com</span>
               </div>
             </div>
-            <div className={stl.about_social}>
-              <ul>
-                <li id={stl.webs}><img src="/technology/website.svg"/>uix.krish</li>
-                <li id={stl.linkdin}><img src="/technology/linkdin.svg"/>/uix.krish</li>
-                <li id={stl.figma}><img src="/technology/figmaIcon.svg"/>/@uix.krish</li>
-                <li id={stl.github}><img src="/technology/github.svg"/>/uix.krish</li>
-              </ul>
-            </div>
+
+            <ul className={stl.aboutSocial}>
+              <li id={stl.webs}>
+                <Image
+                  alt="Website Icon"
+                  src="/technology/website.svg"
+                  width={16}
+                  height={16}
+                />
+                uix.krish
+              </li>
+              <li id={stl.linkedin}>
+                <Image
+                  alt="Linkedin Icon"
+                  src="/technology/linkedin.svg"
+                  width={16}
+                  height={16}
+                />
+                /uix.krish
+              </li>
+              <li id={stl.figma}>
+                <Image
+                  alt="Figma Icon"
+                  src="/technology/figmaIcon.svg"
+                  width={16}
+                  height={16}
+                />
+                /@uix.krish
+              </li>
+              <li id={stl.github}>
+                <Image
+                  alt="GitHub Icon"
+                  src="/technology/github.svg"
+                  width={16}
+                  height={16}
+                />
+                /uix.krish
+              </li>
+            </ul>
           </motion.div>
 
-          <motion.h3
-            {...motionProps}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-           
-            {/* <span>User Interface Designer</span> */}
-          </motion.h3>
-          
           {showBottomSection && (
             <motion.div
               {...motionProps}
@@ -98,9 +124,11 @@ const Hero = ({ showBottomSection }) => {
           </div>
         </motion.div>
       </div>
-      <div>
-        <TechnologyStackNew />
-      </div>
+
+      <motion.div {...motionProps} transition={{ duration: 0.5, delay: 0.3 }}>
+        <TechnologyStack />
+      </motion.div>
+
       {showBottomSection && (
         <div className={stl.bottomSection}>
           <motion.div
