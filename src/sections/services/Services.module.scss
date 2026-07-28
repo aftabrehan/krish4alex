@@ -37,12 +37,16 @@
 .services {
   @extend .spaceBetween;
   gap: 1rem;
+  /* allow wrapping so cards can flow when there's not enough space */
+  flex-wrap: wrap;
 }
 
 .serviceCard {
   @extend .flexColStart;
   justify-content: center;
-  width: calc(33% - 1rem);
+  /* prevent flex items from shrinking and ensure consistent width */
+  flex: 0 0 calc(33% - 1rem);
+  box-sizing: border-box;
   max-width: 320px;
   height: 320px;
   gap: 1rem;
@@ -113,6 +117,9 @@
   }
 
   .serviceCard {
+    /* On small screens let the card span full width */
+    flex: 0 0 auto;
     width: calc(100% - 2rem);
+    max-width: none;
   }
 }
