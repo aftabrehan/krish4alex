@@ -48,11 +48,11 @@ const Services = () => {
 
       <div className={stl.services}>
         {services.map(({ icon, label, link }, i) => (
-          <Link key={i} href={link} passHref>
+          <Link key={i} href={link} passHref className={stl.serviceCard}>
             <motion.a
               {...motionProps}
               transition={{ duration: 0.35, delay: 0.15 + 0.2 * i }}
-              className={stl.serviceCard}
+              
             >
               {icon}
               <div className={stl.label}>
